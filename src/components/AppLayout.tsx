@@ -229,8 +229,8 @@ const AppLayout: React.FC = () => {
                         className={`flex items-center gap-3 border-b border-white/10 bg-gradient-to-b from-slate-800/60 to-slate-900 py-5 ${collapsed ? 'justify-center px-0' : 'px-4'
                             }`}
                     >
-                        <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl overflow-hidden bg-white shadow-lg shadow-indigo-900/60 ring-1 ring-inset ring-white/20">
-                            <img src="/logo.png" alt="MultipathIQ Logo" className="h-full w-full object-contain p-1" />
+                        <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl overflow-hidden">
+                            <img src="/path.png" alt="MultipathIQ Logo" className="h-full w-full object-contain" />
                         </div>
                         {!collapsed && (
                             <div className="min-w-0">

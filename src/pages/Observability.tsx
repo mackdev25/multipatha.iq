@@ -1,15 +1,36 @@
-import React, { useMemo } from 'react';
-import type { ValidationResult } from '../types';
-import { FiPieChart, FiActivity, FiAlertCircle, FiCheckCircle, FiShield, FiCpu, FiTrendingUp } from 'react-icons/fi';
-import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer, Legend, CartesianGrid, AreaChart, Area } from 'recharts';
+import React, { useMemo, useState } from 'react';
+import type { ValidationResult, ValidationSettings } from '../types';
+import { FiPieChart, FiActivity, FiAlertCircle, FiCheckCircle, FiShield, FiCpu, FiTrendingUp, FiPlay, FiLoader } from 'react-icons/fi';
+import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer, Legend, CartesianGrid } from 'recharts';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { generateAIReport } from '../ai';
 
 interface ObservabilityProps {
     data: ValidationResult[];
+    settings: ValidationSettings;
 }
 
 const glassCardClasses = "rounded-3xl border border-white/60 bg-white/40 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]";
 
-const Observability: React.FC<ObservabilityProps> = ({ data }) => {
+const Observability: React.FC<ObservabilityProps> = ({ data, settings }) => {
+    const [aiReport, setAiReport] = useState<string | null>(null);
+    const [isGenerating, setIsGenerating] = useState(false);
+    const [aiError, setAiError] = useState<string | null>(null);
+
+    const handleGenerateReport = async () => {
+        setIsGenerating(true);
+        setAiError(null);
+        try {
+            const report = await generateAIReport(data, settings);
+            setAiReport(report);
+        } catch (err: any) {
+            setAiError(err.message || 'An unknown error occurred while generating the report.');
+        } finally {
+            setIsGenerating(false);
+        }
+    };
+
 
     const stats = useMemo(() => {
         let perfect = 0;
@@ -91,27 +112,61 @@ const Observability: React.FC<ObservabilityProps> = ({ data }) => {
             {/* Top Score & AI Section */}
             <div className="grid grid-cols-12 gap-6">
                 {/* AI Insights Card */}
-                <div className={`col-span-8 ${glassCardClasses} p-6 relative overflow-hidden flex flex-col justify-between bg-gradient-to-br from-indigo-50/50 to-white/40`}>
-                    <div className="absolute -right-10 -top-10 opacity-5">
+                <div className={`col-span-8 ${glassCardClasses} p-6 relative overflow-hidden flex flex-col justify-between ${settings.aiIntegration?.enabled ? 'bg-white/60' : 'bg-gradient-to-br from-indigo-50/50 to-white/40'}`}>
+                    <div className="absolute -right-10 -top-10 opacity-5 pointer-events-none">
                         <FiCpu className="text-[200px] text-indigo-500" />
                     </div>
-                    <div>
-                        <div className="flex items-center gap-2 mb-2">
-                            <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Early Access</span>
+                    
+                    <div className="flex items-center justify-between mb-4 z-10 relative">
+                        <div className="flex items-center gap-2">
+                            {settings.aiIntegration?.enabled ? (
+                                <span className="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Ready</span>
+                            ) : (
+                                <span className="bg-slate-100 text-slate-500 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Configuration Required</span>
+                            )}
                             <h3 className="text-sm font-bold tracking-tight text-indigo-900 flex items-center gap-2">
-                                <FiCpu className="text-indigo-500" /> MultipathIQ AI Insights
+                                <FiCpu className="text-indigo-500" /> AI Report & Insights
                             </h3>
                         </div>
-                        <p className="text-sm text-slate-600 max-w-lg leading-relaxed mt-2">
-                            Our next-generation AI engine is currently analyzing your fabric topology. Once fully initialized, it will provide predictive analytics, automated anomaly detection, and actionable optimization strategies to eliminate bottlenecks before they impact your infrastructure.
-                        </p>
+                        {settings.aiIntegration?.enabled && (
+                            <button
+                                onClick={handleGenerateReport}
+                                disabled={isGenerating}
+                                className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-xs font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-indigo-500/20"
+                            >
+                                {isGenerating ? <FiLoader className="animate-spin text-lg" /> : <FiPlay className="text-lg" />}
+                                {isGenerating ? 'Analyzing...' : 'Generate Smart Report'}
+                            </button>
+                        )}
                     </div>
-                    <div className="mt-6 flex items-center gap-4">
-                        <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 bg-white/60 px-3 py-1.5 rounded-full border border-slate-200/50">
-                            <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-                            Model Training in Progress...
-                        </div>
-                        <span className="text-xs text-slate-400 font-medium">Full AI capabilities unlocking soon.</span>
+
+                    <div className="z-10 relative flex-1 overflow-auto bg-white/50 rounded-xl border border-slate-200/60 p-4 max-h-[400px]">
+                        {!settings.aiIntegration?.enabled ? (
+                            <div className="flex flex-col items-center justify-center h-full text-slate-500 space-y-3 py-8">
+                                <FiCpu className="text-4xl opacity-20" />
+                                <p className="text-sm font-medium">AI Integration is currently disabled.</p>
+                                <p className="text-xs text-slate-400">Navigate to Settings to enable and configure your preferred AI model (OpenAI, Claude, Gemini, Azure).</p>
+                            </div>
+                        ) : isGenerating ? (
+                            <div className="flex flex-col items-center justify-center h-full text-indigo-500 space-y-4 py-8">
+                                <div className="w-12 h-12 rounded-full border-4 border-indigo-200 border-t-indigo-600 animate-spin" />
+                                <p className="text-sm font-bold animate-pulse text-indigo-800">The AI SME is analyzing your infrastructure...</p>
+                            </div>
+                        ) : aiError ? (
+                            <div className="flex flex-col items-center justify-center h-full text-red-500 space-y-3 bg-red-50/50 rounded-xl p-4 py-8">
+                                <FiAlertCircle className="text-3xl" />
+                                <p className="text-sm font-bold text-red-800 text-center">{aiError}</p>
+                            </div>
+                        ) : aiReport ? (
+                            <div className="prose prose-sm prose-slate max-w-none text-slate-700 prose-headings:text-indigo-900 prose-a:text-indigo-600 prose-tables:w-full prose-tables:border-collapse prose-th:bg-slate-100 prose-th:p-2 prose-th:text-left prose-th:border prose-th:border-slate-300 prose-td:p-2 prose-td:border prose-td:border-slate-200">
+                                <ReactMarkdown remarkPlugins={[remarkGfm]}>{aiReport}</ReactMarkdown>
+                            </div>
+                        ) : (
+                            <div className="flex flex-col items-center justify-center h-full text-slate-500 space-y-3 py-8">
+                                <p className="text-sm font-medium">Click Generate to create a comprehensive report.</p>
+                                <p className="text-xs text-slate-400 max-w-md text-center">The AI will analyze multipathing state, single points of failure, redundancy, and provide actionable recommendations.</p>
+                            </div>
+                        )}
                     </div>
                 </div>
 

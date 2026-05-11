@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import type { ValidationSettings, ComplianceCondition } from '../types';
-import { FiPlus, FiTrash2, FiCheck } from 'react-icons/fi';
+import type { ValidationSettings, ComplianceCondition, AIModel } from '../types';
+import { FiPlus, FiTrash2, FiCheck, FiCpu, FiKey, FiGlobe, FiToggleLeft, FiToggleRight } from 'react-icons/fi';
 
 interface SettingsPageProps {
     settings: ValidationSettings;
@@ -208,6 +208,104 @@ const SettingsPage: React.FC<SettingsPageProps> = ({ settings, onUpdateSettings 
                     </section>
                 </>
             )}
+
+            <section className={`${glassCardClasses} p-6 mt-6 border-indigo-200 shadow-indigo-500/10`}>
+                <div className="flex items-center justify-between mb-6">
+                    <div>
+                        <h3 className="text-xl font-bold tracking-tight text-slate-800 flex items-center gap-2">
+                            <FiCpu className="text-indigo-500" /> AI Report Integration
+                        </h3>
+                        <p className="text-sm font-medium text-slate-500 mt-1">Configure your preferred AI model for smart analysis and reporting.</p>
+                    </div>
+                    <button 
+                        onClick={() => onUpdateSettings({
+                            ...settings,
+                            aiIntegration: { ...settings.aiIntegration, enabled: !settings.aiIntegration.enabled }
+                        })}
+                        className={`flex items-center gap-2 px-4 py-2 rounded-xl font-bold transition-all ${
+                            settings.aiIntegration.enabled 
+                            ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30 hover:bg-indigo-700' 
+                            : 'bg-slate-200 text-slate-600 hover:bg-slate-300'
+                        }`}
+                    >
+                        {settings.aiIntegration.enabled ? <FiToggleRight className="text-xl" /> : <FiToggleLeft className="text-xl" />}
+                        {settings.aiIntegration.enabled ? 'AI Enabled' : 'AI Disabled'}
+                    </button>
+                </div>
+
+                {settings.aiIntegration.enabled && (
+                    <div className="space-y-6 border-t border-slate-200/60 pt-6">
+                        <div>
+                            <label className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3 block">Supported AI Models</label>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                {['openai', 'claude', 'gemini', 'azure'].map((model) => (
+                                    <button
+                                        key={model}
+                                        onClick={() => onUpdateSettings({
+                                            ...settings,
+                                            aiIntegration: { ...settings.aiIntegration, selectedModel: model as AIModel }
+                                        })}
+                                        className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl border transition-all ${
+                                            settings.aiIntegration.selectedModel === model
+                                            ? 'border-indigo-500 bg-indigo-50 text-indigo-700 font-bold shadow-sm'
+                                            : 'border-slate-200 bg-white/50 text-slate-600 hover:bg-slate-50'
+                                        }`}
+                                    >
+                                        <span className="capitalize">{model}</span>
+                                        {settings.aiIntegration.selectedModel === model && <FiCheck />}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="space-y-4 max-w-xl">
+                            <div>
+                                <label className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2 block flex items-center gap-2">
+                                    <FiKey className="text-indigo-500" /> API Key ({settings.aiIntegration.selectedModel})
+                                </label>
+                                <input 
+                                    type="password" 
+                                    value={settings.aiIntegration.apiKeys[settings.aiIntegration.selectedModel] || ''}
+                                    onChange={(e) => onUpdateSettings({
+                                        ...settings,
+                                        aiIntegration: {
+                                            ...settings.aiIntegration,
+                                            apiKeys: {
+                                                ...settings.aiIntegration.apiKeys,
+                                                [settings.aiIntegration.selectedModel]: e.target.value
+                                            }
+                                        }
+                                    })}
+                                    placeholder={`Enter your ${settings.aiIntegration.selectedModel} API Key`}
+                                    className={inputClasses}
+                                />
+                                <p className="text-[10px] text-slate-400 mt-1.5 ml-1">Your API key is stored securely in your browser's local memory and is never transmitted to our servers.</p>
+                            </div>
+
+                            {settings.aiIntegration.selectedModel === 'azure' && (
+                                <div>
+                                    <label className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2 block flex items-center gap-2">
+                                        <FiGlobe className="text-indigo-500" /> Azure Endpoint URL
+                                    </label>
+                                    <input 
+                                        type="url" 
+                                        value={settings.aiIntegration.azureEndpoint || ''}
+                                        onChange={(e) => onUpdateSettings({
+                                            ...settings,
+                                            aiIntegration: {
+                                                ...settings.aiIntegration,
+                                                azureEndpoint: e.target.value
+                                            }
+                                        })}
+                                        placeholder="https://your-resource.openai.azure.com/openai/deployments/..."
+                                        className={inputClasses}
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                )}
+            </section>
         </div>
     );
 };

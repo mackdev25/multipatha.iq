@@ -21,8 +21,6 @@ import {
     FiGlobe,
     FiGitBranch,
     FiGrid,
-    FiHardDrive,
-    FiServer,
     FiLayers,
     FiActivity,
     FiRefreshCw,
@@ -33,7 +31,6 @@ import {
     FiChevronRight,
     FiChevronDown,
     FiLock,
-    FiShield,
     FiFileText,
     FiList,
     FiX,
@@ -46,7 +43,12 @@ const defaultSettings: ValidationSettings = {
     conditions: [
         { id: 'preset-1', loggedIn: 1, notLoggedIn: 0, description: 'Single Path (ESXi/RHEL)' },
         { id: 'preset-2', loggedIn: 2, notLoggedIn: 2, description: 'AIX Configuration' }
-    ]
+    ],
+    aiIntegration: {
+        enabled: false,
+        selectedModel: 'openai',
+        apiKeys: {},
+    }
 };
 
 const navItems = [
@@ -190,7 +192,7 @@ const AppLayout: React.FC = () => {
                     />
                 );
             case 'observability':
-                return <Observability data={validationData || []} />;
+                return <Observability data={validationData || []} settings={settings} />;
             case 'settings':
                 return <SettingsPage settings={settings} onUpdateSettings={setSettings} />;
             case 'topology':

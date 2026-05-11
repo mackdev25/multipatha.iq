@@ -71,12 +71,12 @@ const ValidationResults: React.FC<ValidationResultsProps> = ({ results, summary,
         return 'Unknown';
     };
 
-    const handleExport = () => {
+    const handleExport = async () => {
         const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
         const dataToExport = selectedRows.size > 0
             ? filteredResults.filter((_, index) => selectedRows.has(index))
             : filteredResults;
-        ExcelUtils.exportToExcel(dataToExport, `fabric_validation_report_${timestamp}.xlsx`);
+        await ExcelUtils.exportToExcel(dataToExport, `fabric_validation_report_${timestamp}.xlsx`);
     };
 
     const handleSelectAll = () => {

@@ -1,4 +1,4 @@
-import * as XLSX from 'xlsx';
+import ExcelJS from 'exceljs';
 import { saveAs } from 'file-saver';
 import type { FabricData, ValidationResult } from '../types';
 
@@ -7,50 +7,57 @@ export class ExcelUtils {
      * Read Excel file and parse fabric data
      */
     static async readExcelFile(file: File): Promise<FabricData[]> {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
+        return new Promise(async (resolve, reject) => {
+            try {
+                const arrayBuffer = await file.arrayBuffer();
+                const workbook = new ExcelJS.Workbook();
+                await workbook.xlsx.load(arrayBuffer);
+                const worksheet = workbook.worksheets[0];
 
-            reader.onload = (e) => {
-                try {
-                    const data = e.target?.result;
-                    const workbook = XLSX.read(data, { type: 'binary' });
-                    const sheetName = workbook.SheetNames[0];
-                    const worksheet = workbook.Sheets[sheetName];
-
-                    // Convert to JSON with expected column names
-                    const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-
-                    if (jsonData.length < 2) {
-                        throw new Error('Excel file must contain headers and at least one data row');
-                    }
-
-                    const headers = jsonData[0] as string[];
-                    const rows = jsonData.slice(1) as any[][];
-
-                    // Map to FabricData objects
-                    const fabricData: FabricData[] = rows.map(row => {
-                        const obj: any = {};
-                        headers.forEach((header, index) => {
-                            obj[header] = row[index] || '';
-                        });
-                        return obj as FabricData;
-                    }).filter(item => item.Fabric && item.Alias); // Filter out empty rows
-
-                    resolve(fabricData);
-                } catch (error) {
-                    reject(new Error(`Failed to parse Excel file: ${error instanceof Error ? error.message : 'Unknown error'}`));
+                if (!worksheet) {
+                    throw new Error('Excel file must contain at least one worksheet');
                 }
-            };
 
-            reader.onerror = () => reject(new Error('Failed to read file'));
-            reader.readAsBinaryString(file);
+                // Convert to JSON with expected column names
+                const jsonData: any[][] = [];
+                worksheet.eachRow((row) => {
+                    const rowValues: any[] = [];
+                    row.eachCell({ includeEmpty: true }, (cell, colNumber) => {
+                        rowValues[colNumber - 1] = cell.value;
+                    });
+                    jsonData.push(rowValues);
+                });
+
+                if (jsonData.length < 2) {
+                    throw new Error('Excel file must contain headers and at least one data row');
+                }
+
+                const headers = jsonData[0] as string[];
+                const rows = jsonData.slice(1) as any[][];
+
+                // Map to FabricData objects
+                const fabricData: FabricData[] = rows.map(row => {
+                    const obj: any = {};
+                    headers.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj as FabricData;
+                }).filter(item => item.Fabric && item.Alias); // Filter out empty rows
+
+                resolve(fabricData);
+            } catch (error) {
+                reject(new Error(`Failed to parse Excel file: ${error instanceof Error ? error.message : 'Unknown error'}`));
+            }
         });
     }
 
     /**
      * Export validation results to Excel file with WWN information and color coding
      */
-    static exportToExcel(results: ValidationResult[], fileName = 'validation_report.xlsx') {
+    static async exportToExcel(results: ValidationResult[], fileName = 'validation_report.xlsx') {
+        const workbook = new ExcelJS.Workbook();
+        const worksheet = workbook.addWorksheet('Validation Report');
+
         // Create worksheet data with WWN column
         const headers = [
             'Host',
@@ -66,148 +73,90 @@ export class ExcelUtils {
             'Final Validation'
         ];
 
-        const data = [
-            headers,
-            ...results.map(result => {
-                // Format WWNs with status information
-                const wwnText = result.wwns.map(wwn =>
-                    `${wwn.wwn} (${wwn.fabric}: ${wwn.isLoggedIn ? 'Logged In' : 'NOT LOGGED IN'})`
-                ).join('\n');
+        worksheet.addRow(headers);
 
-                // Determine server type
-                const serverType = result.wwns.length >= 8 ? 'AIX' :
-                    result.wwns.length >= 2 ? 'RHEL/ESXi' : 'Unknown';
+        // Header styling
+        worksheet.getRow(1).eachCell(cell => {
+            cell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+            cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF4472C4' } };
+            cell.alignment = { horizontal: 'center', vertical: 'middle' };
+        });
 
-                return [
-                    result.host,
-                    wwnText,
-                    serverType,
-                    result.wwns.length,
-                    result.fabA_LoggedInYes,
-                    result.fabA_LoggedInNo,
-                    result.validationA,
-                    result.fabB_LoggedInYes,
-                    result.fabB_LoggedInNo,
-                    result.validationB,
-                    result.finalValidation
-                ];
-            })
-        ];
+        // Add rows
+        results.forEach((result) => {
+            const wwnText = result.wwns.map(wwn =>
+                `${wwn.wwn} (${wwn.fabric}: ${wwn.isLoggedIn ? 'Logged In' : 'NOT LOGGED IN'})`
+            ).join('\n');
 
-        // Create workbook and worksheet
-        const workbook = XLSX.utils.book_new();
-        const worksheet = XLSX.utils.aoa_to_sheet(data);
+            const serverType = result.wwns.length >= 8 ? 'AIX' :
+                result.wwns.length >= 2 ? 'RHEL/ESXi' : 'Unknown';
 
-        // Style definitions
-        const headerStyle = {
-            font: { bold: true, color: { rgb: "FFFFFF" } },
-            fill: { fgColor: { rgb: "4472C4" } },
-            alignment: { horizontal: "center", vertical: "center" }
-        };
+            const rowData = [
+                result.host,
+                wwnText,
+                serverType,
+                result.wwns.length,
+                result.fabA_LoggedInYes,
+                result.fabA_LoggedInNo,
+                result.validationA,
+                result.fabB_LoggedInYes,
+                result.fabB_LoggedInNo,
+                result.validationB,
+                result.finalValidation
+            ];
 
-        const errorStyle = {
-            font: { color: { rgb: "FFFFFF" } },
-            fill: { fgColor: { rgb: "C5504B" } }
-        };
-
-        const warningStyle = {
-            font: { color: { rgb: "FFFFFF" } },
-            fill: { fgColor: { rgb: "E07C24" } }
-        };
-
-        const goodStyle = {
-            font: { color: { rgb: "FFFFFF" } },
-            fill: { fgColor: { rgb: "70AD47" } }
-        };
-
-        // Apply styling to header row
-        for (let col = 0; col < headers.length; col++) {
-            const cellAddress = XLSX.utils.encode_cell({ r: 0, c: col });
-            if (worksheet[cellAddress]) {
-                worksheet[cellAddress].s = headerStyle;
-            }
-        }
-
-        // Apply conditional formatting to data rows
-        results.forEach((result, rowIndex) => {
-            const excelRow = rowIndex + 1; // +1 because of header row
-
+            const row = worksheet.addRow(rowData);
+            
             // Color-code WWN cell based on logged-in status
-            const wwnCellAddress = XLSX.utils.encode_cell({ r: excelRow, c: 1 }); // WWN column
-            if (worksheet[wwnCellAddress]) {
-                const hasNotLoggedIn = result.wwns.some(wwn => !wwn.isLoggedIn);
-                if (hasNotLoggedIn) {
-                    // Red background for cells with not logged in WWNs
-                    worksheet[wwnCellAddress].s = {
-                        fill: { fgColor: { rgb: "FFE6E6" } },
-                        font: { color: { rgb: "C53030" } },
-                        alignment: { wrapText: true, vertical: "top" }
-                    };
-                } else {
-                    // Green background for all logged in WWNs
-                    worksheet[wwnCellAddress].s = {
-                        fill: { fgColor: { rgb: "E6F4EA" } },
-                        font: { color: { rgb: "276749" } },
-                        alignment: { wrapText: true, vertical: "top" }
-                    };
-                }
+            const wwnCell = row.getCell(2);
+            const hasNotLoggedIn = result.wwns.some(wwn => !wwn.isLoggedIn);
+            if (hasNotLoggedIn) {
+                wwnCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFFFE6E6' } };
+                wwnCell.font = { color: { argb: 'FFC53030' } };
+            } else {
+                wwnCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE6F4EA' } };
+                wwnCell.font = { color: { argb: 'FF276749' } };
             }
+            wwnCell.alignment = { wrapText: true, vertical: 'top' };
 
             // Color-code final validation column
-            const finalValidationCol = 10; // Final Validation column index
-            const finalCellAddress = XLSX.utils.encode_cell({ r: excelRow, c: finalValidationCol });
-            if (worksheet[finalCellAddress]) {
-                switch (result.finalValidation) {
-                    case 'Good':
-                        worksheet[finalCellAddress].s = goodStyle;
-                        break;
-                    case 'Both FABs Are BAD':
-                        worksheet[finalCellAddress].s = errorStyle;
-                        break;
-                    case 'FAB-A Is BAD':
-                    case 'FAB-B Is BAD':
-                        worksheet[finalCellAddress].s = warningStyle;
-                        break;
-                }
+            const finalValidationCell = row.getCell(11);
+            switch (result.finalValidation) {
+                case 'Good':
+                    finalValidationCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF70AD47' } };
+                    finalValidationCell.font = { color: { argb: 'FFFFFFFF' } };
+                    break;
+                case 'Both FABs Are BAD':
+                    finalValidationCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFC5504B' } };
+                    finalValidationCell.font = { color: { argb: 'FFFFFFFF' } };
+                    break;
+                case 'FAB-A Is BAD':
+                case 'FAB-B Is BAD':
+                    finalValidationCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE07C24' } };
+                    finalValidationCell.font = { color: { argb: 'FFFFFFFF' } };
+                    break;
             }
         });
 
         // Auto-size columns with special handling for WWN column
-        const colWidths = headers.map((header, index) => {
+        worksheet.columns.forEach((column, index) => {
             if (index === 1) { // WWN column
-                return { width: 60 }; // Wider column for WWNs
+                column.width = 60;
+            } else {
+                let maxLength = 0;
+                column.eachCell?.({ includeEmpty: true }, cell => {
+                    const columnLength = cell.value ? cell.value.toString().length : 10;
+                    if (columnLength > maxLength) {
+                        maxLength = columnLength;
+                    }
+                });
+                column.width = maxLength < 10 ? 10 : Math.min(maxLength + 2, 30);
             }
-
-            const maxLength = Math.max(
-                header.length,
-                ...results.map(result => {
-                    const values = [
-                        result.host,
-                        '', // Skip WWN column for auto-sizing
-                        result.wwns.length >= 8 ? 'AIX' : 'RHEL/ESXi',
-                        result.wwns.length.toString(),
-                        result.fabA_LoggedInYes.toString(),
-                        result.fabA_LoggedInNo.toString(),
-                        result.validationA,
-                        result.fabB_LoggedInYes.toString(),
-                        result.fabB_LoggedInNo.toString(),
-                        result.validationB,
-                        result.finalValidation
-                    ];
-                    return values[index]?.toString().length || 0;
-                })
-            );
-            return { width: Math.min(Math.max(maxLength + 2, 10), 30) };
         });
 
-        worksheet['!cols'] = colWidths;
-
-        // Add worksheet to workbook
-        XLSX.utils.book_append_sheet(workbook, worksheet, 'Validation Report');
-
         // Generate Excel file and download
-        const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
-        const blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+        const buffer = await workbook.xlsx.writeBuffer();
+        const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
         saveAs(blob, fileName);
     }
 

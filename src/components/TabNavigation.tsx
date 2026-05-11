@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import HomePage from '../pages/HomePage';
 import { TopologyDiagram, ValidationFlowchart, ConnectionMatrix, StorageMapping } from './diagrams';
-import type { ValidationResult, FabricData } from '../types';
+import type { ValidationResult, FabricData, ValidationSettings } from '../types';
 
 
 type TabType = 'validation' | 'topology' | 'flowchart' | 'matrix' | 'storage';
@@ -40,7 +40,11 @@ const tabs: Tab[] = [
     }
 ];
 
-const TabNavigation: React.FC = () => {
+interface TabNavigationProps {
+    settings: ValidationSettings;
+}
+
+const TabNavigation: React.FC<TabNavigationProps> = ({ settings }) => {
     const [activeTab, setActiveTab] = useState<TabType>('validation');
     const [validationData, setValidationData] = useState<ValidationResult[] | null>(null);
     const [summaryData, setSummaryData] = useState<any>(null);
@@ -65,6 +69,7 @@ const TabNavigation: React.FC = () => {
             case 'validation':
                 return (
                     <HomePage
+                        settings={settings}
                         onDataUpdate={handleDataUpdate}
                         onDataReset={handleDataReset}
                         initialResults={validationData}
@@ -80,7 +85,7 @@ const TabNavigation: React.FC = () => {
             case 'storage':
                 return <StorageMapping data={rawFabricData || []} />;
             default:
-                return <HomePage onDataUpdate={handleDataUpdate} onDataReset={handleDataReset} />;
+                return <HomePage settings={settings} onDataUpdate={handleDataUpdate} onDataReset={handleDataReset} />;
         }
     };
 

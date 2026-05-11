@@ -64,7 +64,20 @@ export interface ComplianceCondition {
     description?: string;
 }
 
+export type AIModel = 'openai' | 'claude' | 'gemini' | 'azure';
+
 export interface ValidationSettings {
     mode: 'multipath' | 'compliance';
     conditions: ComplianceCondition[];
+    aiIntegration: {
+        enabled: boolean;
+        selectedModel: AIModel;
+        apiKeys: {
+            openai?: string;
+            claude?: string;
+            gemini?: string;
+            azure?: string;
+        };
+        azureEndpoint?: string;
+    };
 }

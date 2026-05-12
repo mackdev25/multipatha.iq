@@ -27,7 +27,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
 # ── Constants ──────────────────────────────────────────────────────────────────
-$REPO_URL          = "https://github.com/mackdev25/mpath.git"
+$REPO_URL          = "https://github.com/mackdev25/mpath-main.git"
 $APP_NAME          = "Mpath"
 $APP_VERSION       = "v1.0.1"
 $NODE_MIN_VERSION  = 18
@@ -35,7 +35,7 @@ $CONFIG_DIR        = "$env:USERPROFILE\.mpath"
 $LOG_DIR           = "$CONFIG_DIR\logs"
 $LOG_FILE          = "$LOG_DIR\server.log"
 $PID_FILE          = "$CONFIG_DIR\server.pid"
-$MPATHCTL_RELEASES = "https://github.com/mackdev25/mpath/releases/latest/download"
+$MPATHCTL_RELEASES = "https://github.com/mackdev25/mpath-main/releases/download/v1.0.1"
 $BIN_DIR           = "$env:USERPROFILE\.local\bin"
 
 # ── Colour helpers ─────────────────────────────────────────────────────────────

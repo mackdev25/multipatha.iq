@@ -11,7 +11,7 @@
 set -euo pipefail
 
 # ── Constants ──────────────────────────────────────────────────────────────────
-readonly REPO_URL="https://github.com/mackdev25/mpath.git"
+readonly REPO_URL="https://github.com/mackdev25/mpath-main.git"
 readonly APP_NAME="Mpath"
 readonly APP_VERSION="v1.0.1"
 readonly NODE_MIN_VERSION=18
@@ -20,7 +20,7 @@ readonly CONFIG_DIR="${HOME}/.mpath"
 readonly PID_FILE="${CONFIG_DIR}/server.pid"
 readonly LOG_DIR="${CONFIG_DIR}/logs"
 readonly LOG_FILE="${LOG_DIR}/server.log"
-readonly MPATHCTL_RELEASES="https://github.com/mackdev25/mpath/releases/latest/download"
+readonly MPATHCTL_RELEASES="https://github.com/mackdev25/mpath-main/releases/download/v1.0.1"
 
 # ── Colours ────────────────────────────────────────────────────────────────────
 if [[ -t 1 ]]; then

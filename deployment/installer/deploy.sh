@@ -4,7 +4,7 @@
 #  Supports: macOS · Linux · RHEL/CentOS/Fedora · Ubuntu/Debian
 #
 #  Usage:
-#    curl -fsSL https://raw.githubusercontent.com/ZoneAssure/MultipathIQ-Main/main/deployment/installer/deploy.sh | bash
+#    curl -fsSL https://raw.githubusercontent.com/mackdev25/multipatha.iq/main/deployment/installer/deploy.sh | bash
 #    — or —
 #    bash deploy.sh [--install-dir /path] [--port 4173] [--no-mpathctl]
 # =============================================================================
@@ -20,7 +20,7 @@ readonly CONFIG_DIR="${HOME}/.mpathiq"
 readonly PID_FILE="${CONFIG_DIR}/server.pid"
 readonly LOG_DIR="${CONFIG_DIR}/logs"
 readonly LOG_FILE="${LOG_DIR}/server.log"
-readonly MPATHCTL_RELEASES="https://github.com/ZoneAssure/MultipathIQ-Main/releases/latest/download"
+readonly MPATHCTL_RELEASES="https://github.com/mackdev25/multipatha.iq/releases/latest/download"
 
 # ── Colours ────────────────────────────────────────────────────────────────────
 if [[ -t 1 ]]; then

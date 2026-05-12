@@ -116,8 +116,18 @@ func printBanner() {
 	fmt.Printf("%s║%s   %s%s╚═╝     ╚═╝╚═╝     ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝%s\n", cyan, reset, bold, bCyan, reset)
 	fmt.Printf("%s║%s\n", cyan, reset)
 	fmt.Printf("%s║%s   %sMultipath Intelligence Platform  ·  SAN Fabric Analytics%s\n", cyan, reset, dim, reset)
-	fmt.Printf("%s║%s   %s%s  ·  %s%s\n", cyan, reset, dim, AppVersion, runtime.GOOS+"/"+runtime.GOARCH, reset)
+	fmt.Printf("%s║%s   %sAdvanced SAN zone validation, topology mapping & fabric intelligence%s\n", cyan, reset, dim, reset)
 	fmt.Printf("%s║%s\n", cyan, reset)
+	fmt.Printf("%s╠═══════════════════════════════════════════════════════════════════╣%s\n", cyan, reset)
+	fmt.Printf("%s║%s   %sVersion%s    %s%-10s%s   %sPlatform%s  %s%s/%s%s\n",
+		cyan, reset, dim, reset, bCyan, AppVersion, reset, dim, reset, white, runtime.GOOS, runtime.GOARCH, reset)
+	fmt.Printf("%s║%s   %sGo%s         %s%-10s%s\n",
+		cyan, reset, dim, reset, white, runtime.Version(), reset)
+	fmt.Printf("%s╠═══════════════════════════════════════════════════════════════════╣%s\n", cyan, reset)
+	fmt.Printf("%s║%s   %sBuilt by%s   %s%-18s%s  %shttps://www.superstack.in/%s\n",
+		cyan, reset, dim, reset, bold+white, "Superstack", reset, dim, reset)
+	fmt.Printf("%s║%s   %sDeveloper%s  %sAtanu Kumar Pal%s\n", cyan, reset, dim, reset, white, reset)
+	fmt.Printf("%s║%s   %sSupport%s    %shello@superstack.in%s\n", cyan, reset, dim, reset, white, reset)
 	fmt.Printf("%s╚═══════════════════════════════════════════════════════════════════╝%s\n", cyan, reset)
 	fmt.Println()
 }

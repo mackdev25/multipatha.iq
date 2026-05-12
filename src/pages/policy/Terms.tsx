@@ -7,15 +7,15 @@ const Terms: React.FC = () => {
         <div className="flex h-full flex-col p-6 space-y-6 overflow-auto pb-12 max-w-4xl mx-auto">
             <section className={`${glassCardClasses} p-8 md:p-10`}>
                 <h1 className="text-3xl font-bold text-slate-800 mb-10 tracking-tight">Terms and Conditions</h1>
-                
+
                 <div className="space-y-10 text-slate-600 leading-relaxed">
-                    
+
                     <div>
                         <p>
-                            Welcome to Mpath, an enterprise infrastructure monitoring and observability platform operated by Macklabs ("Company," "we," "us," or "our"). We hope you enjoy the experience!
+                            Welcome to Mpath, an enterprise infrastructure monitoring and observability platform operated by Superstack ("Company," "we," "us," or "our"). We hope you enjoy the experience!
                         </p>
                         <p className="mt-4">
-                            These Terms and Conditions ("Terms") are a legal contract between you and Macklabs and govern your activity on Mpath's websites, applications, monitoring agents, and other tools. All the text, data, information, software, graphics, logos, photographs, and more (all of which we refer to as "Materials") that Macklabs and its subsidiaries and affiliated companies may make available to you, as well as any solutions we may make available to you through any of our websites and other tools (all of which are referred to in these Terms as "Mpath Tools").
+                            These Terms and Conditions ("Terms") are a legal contract between you and Superstack and govern your activity on Mpath's websites, applications, monitoring agents, and other tools. All the text, data, information, software, graphics, logos, photographs, and more (all of which we refer to as "Materials") that Superstack and its subsidiaries and affiliated companies may make available to you, as well as any solutions we may make available to you through any of our websites and other tools (all of which are referred to in these Terms as "Mpath Tools").
                         </p>
                         <p className="mt-6 p-4 bg-slate-100 rounded-xl border border-slate-200/60 font-semibold text-slate-800 uppercase tracking-wide text-sm">
                             READ THESE TERMS CAREFULLY BEFORE ACCESSING, BROWSING, OR USING Mpath TOOLS. ACCESSING, BROWSING, OR USING Mpath TOOLS INDICATES THAT YOU HAVE BOTH READ AND ACCEPT THESE TERMS. YOU CANNOT ACCESS, BROWSE, OR USE Mpath TOOLS IF YOU DO NOT ACCEPT THESE TERMS.
@@ -30,7 +30,7 @@ const Terms: React.FC = () => {
                         </h2>
                         <p className="mb-2">When you access Mpath Tools, you are responsible for complying with these Terms as well as any and all use of Mpath Tools through any account that you may set up. Some Materials will only be available to you if you have an account.</p>
                         <p className="mb-2">You agree to provide true, accurate, current, and complete information for so long as you use Mpath Tools. It is your responsibility to obtain and maintain all equipment, services and software needed for access to and use of Mpath Tools. It is also your responsibility to maintain the confidentiality of your password(s).</p>
-                        <p>Sometimes, we collect certain personal information about you solely in connection with your access and use of Mpath Tools. Macklabs's use of that information is governed by the provisions of our Privacy Policy.</p>
+                        <p>Sometimes, we collect certain personal information about you solely in connection with your access and use of Mpath Tools. Superstack's use of that information is governed by the provisions of our Privacy Policy.</p>
                     </div>
 
                     {/* Section 2 */}
@@ -49,7 +49,7 @@ const Terms: React.FC = () => {
                             <span className="text-indigo-500/50 font-mono text-sm">3.</span>
                             Unauthorized Use of Mpath Tools
                         </h2>
-                        <p>We authorize your limited use of Mpath Tools. Any other use of Mpath Tools beyond the permitted uses is prohibited and constitutes unauthorized use. All rights in Mpath Tools and Materials remain the property of Macklabs, its subsidiaries, or its affiliated companies.</p>
+                        <p>We authorize your limited use of Mpath Tools. Any other use of Mpath Tools beyond the permitted uses is prohibited and constitutes unauthorized use. All rights in Mpath Tools and Materials remain the property of Superstack, its subsidiaries, or its affiliated companies.</p>
                     </div>
 
                     {/* Section 4 */}
@@ -86,8 +86,8 @@ const Terms: React.FC = () => {
                             Disclaimers
                         </h2>
                         <p className="font-semibold text-slate-800 mb-2">Mpath TOOLS ARE PROVIDED "AS IS" AND "WITH ALL FAULTS" AND THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF Mpath TOOLS IS WITH YOU.</p>
-                        <p className="mb-2">Macklabs expressly disclaims all warranties of any kind (express, implied or statutory) with respect to Mpath Tools, which includes but is not limited to, any implied or statutory warranties of merchantability, fitness for a particular use or purpose, title, and non-infringement of intellectual property rights.</p>
-                        <p>Macklabs does not promise you that Mpath Tools will meet your requirements or that Mpath Tools will be uninterrupted, timely, secure, or error free or that defects will be corrected.</p>
+                        <p className="mb-2">Superstack expressly disclaims all warranties of any kind (express, implied or statutory) with respect to Mpath Tools, which includes but is not limited to, any implied or statutory warranties of merchantability, fitness for a particular use or purpose, title, and non-infringement of intellectual property rights.</p>
+                        <p>Superstack does not promise you that Mpath Tools will meet your requirements or that Mpath Tools will be uninterrupted, timely, secure, or error free or that defects will be corrected.</p>
                     </div>
 
                     {/* Section 7 */}
@@ -97,7 +97,7 @@ const Terms: React.FC = () => {
                             Limitation of Liability
                         </h2>
                         <p className="font-semibold text-slate-800 uppercase text-[13px] leading-relaxed bg-rose-50/50 p-4 rounded-xl border border-rose-100">
-                            IN NO EVENT WILL ANY OF THE MACKLABS PARTIES BE LIABLE FOR (A) ANY INDIRECT, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES OR (B) DAMAGES THAT ARE MORE THAN ONE HUNDRED UNITED STATES (US$100.00) DOLLARS IN TOTAL (INCLUDING, WITHOUT LIMITATION, THOSE RESULTING FROM LOSS OF REVENUES, LOST PROFITS, LOSS OF GOODWILL, LOSS OF USE, BUSINESS INTERRUPTION, OR OTHER INTANGIBLE LOSSES), ARISING OUT OF OR IN CONNECTION WITH Mpath TOOLS, WHETHER SUCH DAMAGES ARE BASED ON WARRANTY, CONTRACT, TORT, STATUTE, OR ANY OTHER LEGAL THEORY.
+                            IN NO EVENT WILL ANY OF THE SUPERSTACK PARTIES BE LIABLE FOR (A) ANY INDIRECT, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES OR (B) DAMAGES THAT ARE MORE THAN ONE HUNDRED UNITED STATES (US$100.00) DOLLARS IN TOTAL (INCLUDING, WITHOUT LIMITATION, THOSE RESULTING FROM LOSS OF REVENUES, LOST PROFITS, LOSS OF GOODWILL, LOSS OF USE, BUSINESS INTERRUPTION, OR OTHER INTANGIBLE LOSSES), ARISING OUT OF OR IN CONNECTION WITH Mpath TOOLS, WHETHER SUCH DAMAGES ARE BASED ON WARRANTY, CONTRACT, TORT, STATUTE, OR ANY OTHER LEGAL THEORY.
                         </p>
                     </div>
 
@@ -123,7 +123,7 @@ const Terms: React.FC = () => {
                         </h2>
                         <ul className="space-y-2">
                             <li><strong className="text-slate-800">9.1 Telemetry Accuracy:</strong> Mpath relies on agents, SNMP, web probes, and API endpoints to collect telemetry. While we strive for high accuracy and minimal latency, network conditions, agent configurations, and external factors may cause delays or inaccuracies in reported statuses or metrics.</li>
-                            <li><strong className="text-slate-800">9.2 Alerting Responsibility:</strong> You are responsible for configuring appropriate thresholds, alert rules, and incident response integrations. Macklabs is not liable for missed alerts, false positives, or the resulting impact on your business operations or service level agreements (SLAs).</li>
+                            <li><strong className="text-slate-800">9.2 Alerting Responsibility:</strong> You are responsible for configuring appropriate thresholds, alert rules, and incident response integrations. Superstack is not liable for missed alerts, false positives, or the resulting impact on your business operations or service level agreements (SLAs).</li>
                         </ul>
                     </div>
 
@@ -134,9 +134,9 @@ const Terms: React.FC = () => {
                             Intellectual Property Rights
                         </h2>
                         <ul className="space-y-2">
-                            <li><strong className="text-slate-800">10.1 Our Rights:</strong> Mpath, including its software, agents, design, and content, is owned by Macklabs and protected by intellectual property laws.</li>
+                            <li><strong className="text-slate-800">10.1 Our Rights:</strong> Mpath, including its software, agents, design, and content, is owned by Superstack and protected by intellectual property laws.</li>
                             <li><strong className="text-slate-800">10.2 License:</strong> We grant you a limited, non-exclusive, non-transferable license to use Mpath and install its tracking agents in accordance with these Terms.</li>
-                            <li><strong className="text-slate-800">10.3 Closed Software License:</strong> Mpath is a closed-source, proprietary software application. This software is not open source and cannot be used, modified, distributed, or reproduced without explicit written approval from Macklabs.</li>
+                            <li><strong className="text-slate-800">10.3 Closed Software License:</strong> Mpath is a closed-source, proprietary software application. This software is not open source and cannot be used, modified, distributed, or reproduced without explicit written approval from Superstack.</li>
                         </ul>
                     </div>
 
@@ -146,7 +146,7 @@ const Terms: React.FC = () => {
                             <span className="text-indigo-500/50 font-mono text-sm">11.</span>
                             Indemnification
                         </h2>
-                        <p>You agree to indemnify, defend, and hold harmless Macklabs and its officers, directors, employees, and agents from and against any and all claims, liabilities, damages, losses, costs, expenses, or fees (including reasonable attorneys' fees) that such parties may incur as a result of or arising from your (or anyone using your account) violation of these Terms.</p>
+                        <p>You agree to indemnify, defend, and hold harmless Superstack and its officers, directors, employees, and agents from and against any and all claims, liabilities, damages, losses, costs, expenses, or fees (including reasonable attorneys' fees) that such parties may incur as a result of or arising from your (or anyone using your account) violation of these Terms.</p>
                     </div>
 
                     {/* Section 12 */}
@@ -155,7 +155,7 @@ const Terms: React.FC = () => {
                             <span className="text-indigo-500/50 font-mono text-sm">12.</span>
                             Governing Law
                         </h2>
-                        <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction where Macklabs is incorporated, without regard to conflict of law principles.</p>
+                        <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction where Superstack is incorporated, without regard to conflict of law principles.</p>
                     </div>
 
                     {/* Section 13 */}
@@ -164,7 +164,7 @@ const Terms: React.FC = () => {
                             <span className="text-indigo-500/50 font-mono text-sm">13.</span>
                             Entire Agreement
                         </h2>
-                        <p>These Terms constitute the entire and exclusive and final statement of the agreement between you and Macklabs with respect to the subject matter hereof, superseding any prior agreements or negotiations.</p>
+                        <p>These Terms constitute the entire and exclusive and final statement of the agreement between you and Superstack with respect to the subject matter hereof, superseding any prior agreements or negotiations.</p>
                     </div>
 
                     {/* Section 14 */}
@@ -175,8 +175,8 @@ const Terms: React.FC = () => {
                         </h2>
                         <p className="mb-2">If you have any questions about these Terms, please contact us at:</p>
                         <address className="not-italic text-slate-800 font-medium bg-white/50 p-4 rounded-xl border border-slate-200/60 inline-block">
-                            Macklabs<br />
-                            Email: <a href="mailto:legal@macklabs.com" className="text-indigo-600 font-normal hover:underline">legal@macklabs.com</a><br />
+                            Superstack<br />
+                            Email: <a href="mailto:superstack@outlook.in" className="text-indigo-600 font-normal hover:underline">superstack@outlook.in</a><br />
                         </address>
                     </div>
 

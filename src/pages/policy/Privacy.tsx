@@ -7,19 +7,19 @@ const Privacy: React.FC = () => {
         <div className="flex h-full flex-col p-6 space-y-6 overflow-auto pb-12 max-w-4xl mx-auto">
             <section className={`${glassCardClasses} p-8 md:p-10`}>
                 <h1 className="text-3xl font-bold text-slate-800 mb-10 tracking-tight">Privacy Policy</h1>
-                
+
                 <div className="space-y-10 text-slate-600 leading-relaxed">
-                    
+
                     <div>
                         <p>
-                            We at Macklabs (together with our affiliates, "Mpath", "we", "our", or "us") respect your privacy and are strongly committed to keeping secure any information we obtain from you or about you. This Privacy Policy describes our practices with respect to Personal Information we collect from or about you when you use our website, applications, and services (collectively, "Services").
+                            We at Superstack (together with our affiliates, "Mpath", "we", "our", or "us") respect your privacy and are strongly committed to keeping secure any information we obtain from you or about you. This Privacy Policy describes our practices with respect to Personal Information we collect from or about you when you use our website, applications, and services (collectively, "Services").
                         </p>
                         <p className="mt-4">
                             This Privacy Policy does not apply to the infrastructure telemetry, logs, uptime metrics, or status data that we process on behalf of customers of our business offerings. Our use of that infrastructure data is governed entirely by our customer agreements covering access to and use of those enterprise monitoring offerings.
                         </p>
                         <p className="mt-4 font-medium text-slate-800">Effective: April 20, 2026</p>
                         <p className="mt-4">
-                            We've updated our Privacy Policy below. These updates apply to all users of Mpath Services. If you have any questions about these changes, please contact us at <a href="mailto:privacy@macklabs.com" className="text-indigo-600 hover:underline">privacy@macklabs.com</a>.
+                            We've updated our Privacy Policy below. These updates apply to all users of Mpath Services. If you have any questions about these changes, please contact us at <a href="mailto:superstack@outlook.in" className="text-indigo-600 hover:underline">superstack@outlook.in</a>.
                         </p>
                     </div>
 
@@ -90,7 +90,7 @@ const Privacy: React.FC = () => {
                             Your Rights
                         </h2>
                         <p className="mb-3">Depending on location, individuals may have certain statutory rights in relation to their Personal Information. For example, you may have the right to access, delete, rectify, transfer, restrict, or object to the processing of your Personal Information, as well as lodge a complaint with your local data protection authority.</p>
-                        <p>You can exercise some of these rights through your Mpath account. If you are unable to exercise your rights through your account, please submit your request to <a href="mailto:privacy@macklabs.com" className="text-indigo-600 hover:underline">privacy@macklabs.com</a>.</p>
+                        <p>You can exercise some of these rights through your Mpath account. If you are unable to exercise your rights through your account, please submit your request to <a href="mailto:superstack@outlook.in" className="text-indigo-600 hover:underline">superstack@outlook.in</a>.</p>
                     </div>
 
                     {/* Section 5 */}
@@ -128,8 +128,8 @@ const Privacy: React.FC = () => {
                         </h2>
                         <p className="mb-2">If you have any questions about this Privacy Policy or our privacy practices, please contact us at:</p>
                         <address className="not-italic text-slate-800 font-medium bg-white/50 p-4 rounded-xl border border-slate-200/60 inline-block">
-                            Macklabs.<br />
-                            Email: <a href="mailto:privacy@macklabs.com" className="text-indigo-600 font-normal hover:underline">privacy@macklabs.com</a><br />
+                            Superstack.<br />
+                            Email: <a href="mailto:superstack@outlook.in" className="text-indigo-600 font-normal hover:underline">superstack@outlook.in</a><br />
                         </address>
                     </div>
 

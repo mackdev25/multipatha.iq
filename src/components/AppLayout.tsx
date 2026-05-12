@@ -6,7 +6,7 @@ import Privacy from '../pages/policy/Privacy';
 import Terms from '../pages/policy/Terms';
 import Changelogs from '../pages/changelogs/Changelogs';
 import Observability from '../pages/Observability';
-import { FaDiscord, FaTwitter, FaYoutube, FaProductHunt } from 'react-icons/fa';
+import { FaDiscord, FaYoutube, FaProductHunt, FaWhatsapp } from 'react-icons/fa';
 import versionData from '../version.json';
 import {
     TopologyDiagram,
@@ -104,6 +104,28 @@ const AppLayout: React.FC = () => {
         setTimeout(() => setAppToast(t => ({ ...t, fading: true })), 6000);
         setTimeout(() => setAppToast(t => ({ ...t, visible: false, fading: false })), 6500);
     };
+
+    const showYouTubeToast = () => showAppToast(
+        <>
+            <p className="font-bold text-slate-800 mb-1">📺 Tutorial Videos Coming Soon</p>
+            <p className="text-sm text-slate-600 leading-relaxed">
+                We're actively producing in-depth tutorial and walkthrough videos to help you get the most out of Mpath.
+                Expect content covering Brocade SANnav exports, path validation, observability deep-dives, and advanced compliance checks.
+                Subscribe to our YouTube channel to be notified the moment they drop.
+            </p>
+        </>
+    );
+
+    const showProductHuntToast = () => showAppToast(
+        <>
+            <p className="font-bold text-slate-800 mb-1">🚀 Launching on Product Hunt — Stay Tuned!</p>
+            <p className="text-sm text-slate-600 leading-relaxed">
+                Mpath is preparing for an official launch on Product Hunt. Be among the first to support the project,
+                leave a review, and help the community discover a better way to validate SAN fabric multipathing.
+                Follow us to get notified on launch day!
+            </p>
+        </>
+    );
 
     const pageMeta: Record<SectionType, { title: string; subtitle: string }> = {
         validation: {
@@ -382,11 +404,39 @@ const AppLayout: React.FC = () => {
 
                     {/* Social icons */}
                     {!collapsed && (
-                        <div className="flex items-center justify-center gap-5 px-4 py-3 mt-2 border-t border-white/5">
-                            <a href="<Demo Link>" className="text-slate-500 hover:text-indigo-400 transition-colors" title="Discord"><FaDiscord size={18} /></a>
-                            <a href="<Demo Link>" className="text-slate-500 hover:text-indigo-400 transition-colors" title="X"><FaTwitter size={18} /></a>
-                            <a href="<Demo Link>" className="text-slate-500 hover:text-indigo-400 transition-colors" title="Youtube"><FaYoutube size={18} /></a>
-                            <a href="<Demo Link>" className="text-slate-500 hover:text-indigo-400 transition-colors" title="Product Hunt"><FaProductHunt size={18} /></a>
+                        <div className="flex items-center justify-center gap-4 px-4 py-3 mt-2 border-t border-white/5">
+                            <a
+                                href="https://discord.gg/N3jF6rxKMt"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-slate-500 hover:text-indigo-400 transition-colors"
+                                title="Join our Discord Community"
+                            >
+                                <FaDiscord size={18} />
+                            </a>
+                            <button
+                                onClick={showYouTubeToast}
+                                className="text-slate-500 hover:text-red-400 transition-colors"
+                                title="YouTube — Tutorial Videos Coming Soon"
+                            >
+                                <FaYoutube size={18} />
+                            </button>
+                            <button
+                                onClick={showProductHuntToast}
+                                className="text-slate-500 hover:text-orange-400 transition-colors"
+                                title="Product Hunt — Launching Soon!"
+                            >
+                                <FaProductHunt size={18} />
+                            </button>
+                            <a
+                                href="https://chat.whatsapp.com/FRRSOR1QdCdEd041ZQXy7n?mode=gi_t"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-slate-500 hover:text-green-400 transition-colors"
+                                title="Join our WhatsApp Community"
+                            >
+                                <FaWhatsapp size={18} />
+                            </a>
                         </div>
                     )}
 
@@ -476,7 +526,7 @@ const AppLayout: React.FC = () => {
                                 <FiSettings className="text-[14px]" />
                             </button>
                             <a
-                                href="https://github.com/mackdev-inc/zone-assure"
+                                href="https://github.com/superstack-oss/mpath-main.git"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex h-8 w-8 items-center justify-center rounded-lg text-slate-400 transition-all hover:bg-white/70 hover:text-slate-700"

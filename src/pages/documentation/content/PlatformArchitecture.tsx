@@ -6,18 +6,18 @@ const PlatformArchitecture: React.FC = () => {
             <h1 className="text-3xl font-extrabold text-slate-900 mb-6">Platform Architecture</h1>
             
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Understanding the architecture of MultipathIQ is crucial to appreciating its security model. The platform is designed entirely around a <strong>Local-First, Zero-Exfiltration</strong> paradigm.
+                Understanding the architecture of Mpath is crucial to appreciating its security model. The platform is designed entirely around a <strong>Local-First, Zero-Exfiltration</strong> paradigm.
             </p>
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">The Zero-Trust Sandbox</h2>
             <p className="text-slate-600 mb-4">
-                Unlike traditional monitoring tools that require deploying agents or establishing secure tunnels back to a cloud service, MultipathIQ operates 100% within the sandbox of the user's modern web browser.
+                Unlike traditional monitoring tools that require deploying agents or establishing secure tunnels back to a cloud service, Mpath operates 100% within the sandbox of the user's modern web browser.
             </p>
 
             <div className="bg-slate-800 text-slate-300 rounded-xl p-6 my-6 font-mono text-sm leading-relaxed overflow-x-auto">
-                {`[User Browser] <--- (Loads static UI) ---> [MultipathIQ Server]`}<br/><br/>
+                {`[User Browser] <--- (Loads static UI) ---> [Mpath Server]`}<br/><br/>
                 {`[Brocade SAN] ---> (Config Dump .xlsx) ---> [User Local Machine]`}<br/><br/>
-                {`[User Local Machine] ---> (In-Browser Parse) ---> [MultipathIQ Dashboard]`}<br/><br/>
+                {`[User Local Machine] ---> (In-Browser Parse) ---> [Mpath Dashboard]`}<br/><br/>
                 <span className="text-emerald-400"># NO data ever traverses the network.</span>
             </div>
 

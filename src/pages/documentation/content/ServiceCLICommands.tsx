@@ -6,7 +6,7 @@ const ServiceCLICommands: React.FC = () => {
             <h1 className="text-3xl font-extrabold text-slate-900 mb-6">Service CLI Commands</h1>
             
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                As a standard user, you interact with MultipathIQ purely through the graphical web interface. However, for administrators deploying or developing the platform, specific CLI commands are available via Node.js.
+                As a standard user, you interact with Mpath purely through the graphical web interface. However, for administrators deploying or developing the platform, specific CLI commands are available via Node.js.
             </p>
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">NPM Scripts</h2>

@@ -12,13 +12,13 @@ const Terms: React.FC = () => {
                     
                     <div>
                         <p>
-                            Welcome to MultipathIQ, an enterprise infrastructure monitoring and observability platform operated by Macklabs ("Company," "we," "us," or "our"). We hope you enjoy the experience!
+                            Welcome to Mpath, an enterprise infrastructure monitoring and observability platform operated by Macklabs ("Company," "we," "us," or "our"). We hope you enjoy the experience!
                         </p>
                         <p className="mt-4">
-                            These Terms and Conditions ("Terms") are a legal contract between you and Macklabs and govern your activity on MultipathIQ's websites, applications, monitoring agents, and other tools. All the text, data, information, software, graphics, logos, photographs, and more (all of which we refer to as "Materials") that Macklabs and its subsidiaries and affiliated companies may make available to you, as well as any solutions we may make available to you through any of our websites and other tools (all of which are referred to in these Terms as "MultipathIQ Tools").
+                            These Terms and Conditions ("Terms") are a legal contract between you and Macklabs and govern your activity on Mpath's websites, applications, monitoring agents, and other tools. All the text, data, information, software, graphics, logos, photographs, and more (all of which we refer to as "Materials") that Macklabs and its subsidiaries and affiliated companies may make available to you, as well as any solutions we may make available to you through any of our websites and other tools (all of which are referred to in these Terms as "Mpath Tools").
                         </p>
                         <p className="mt-6 p-4 bg-slate-100 rounded-xl border border-slate-200/60 font-semibold text-slate-800 uppercase tracking-wide text-sm">
-                            READ THESE TERMS CAREFULLY BEFORE ACCESSING, BROWSING, OR USING MULTIPATHIQ TOOLS. ACCESSING, BROWSING, OR USING MULTIPATHIQ TOOLS INDICATES THAT YOU HAVE BOTH READ AND ACCEPT THESE TERMS. YOU CANNOT ACCESS, BROWSE, OR USE MULTIPATHIQ TOOLS IF YOU DO NOT ACCEPT THESE TERMS.
+                            READ THESE TERMS CAREFULLY BEFORE ACCESSING, BROWSING, OR USING Mpath TOOLS. ACCESSING, BROWSING, OR USING Mpath TOOLS INDICATES THAT YOU HAVE BOTH READ AND ACCEPT THESE TERMS. YOU CANNOT ACCESS, BROWSE, OR USE Mpath TOOLS IF YOU DO NOT ACCEPT THESE TERMS.
                         </p>
                     </div>
 
@@ -26,30 +26,30 @@ const Terms: React.FC = () => {
                     <div>
                         <h2 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
                             <span className="text-indigo-500/50 font-mono text-sm">1.</span>
-                            Accessing MultipathIQ Tools
+                            Accessing Mpath Tools
                         </h2>
-                        <p className="mb-2">When you access MultipathIQ Tools, you are responsible for complying with these Terms as well as any and all use of MultipathIQ Tools through any account that you may set up. Some Materials will only be available to you if you have an account.</p>
-                        <p className="mb-2">You agree to provide true, accurate, current, and complete information for so long as you use MultipathIQ Tools. It is your responsibility to obtain and maintain all equipment, services and software needed for access to and use of MultipathIQ Tools. It is also your responsibility to maintain the confidentiality of your password(s).</p>
-                        <p>Sometimes, we collect certain personal information about you solely in connection with your access and use of MultipathIQ Tools. Macklabs's use of that information is governed by the provisions of our Privacy Policy.</p>
+                        <p className="mb-2">When you access Mpath Tools, you are responsible for complying with these Terms as well as any and all use of Mpath Tools through any account that you may set up. Some Materials will only be available to you if you have an account.</p>
+                        <p className="mb-2">You agree to provide true, accurate, current, and complete information for so long as you use Mpath Tools. It is your responsibility to obtain and maintain all equipment, services and software needed for access to and use of Mpath Tools. It is also your responsibility to maintain the confidentiality of your password(s).</p>
+                        <p>Sometimes, we collect certain personal information about you solely in connection with your access and use of Mpath Tools. Macklabs's use of that information is governed by the provisions of our Privacy Policy.</p>
                     </div>
 
                     {/* Section 2 */}
                     <div>
                         <h2 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
                             <span className="text-indigo-500/50 font-mono text-sm">2.</span>
-                            Your Permitted Use of MultipathIQ Tools
+                            Your Permitted Use of Mpath Tools
                         </h2>
-                        <p className="mb-2">You are invited to use MultipathIQ Tools for your business purposes to monitor, manage, and observe your infrastructure layout. We hereby grant you a limited, personal, non-exclusive and non-transferable license during the authorized term to use and to display the Materials only in connection with these permitted uses.</p>
-                        <p>You have no other rights in MultipathIQ Tools or any Materials and you may not modify, edit, copy, reproduce, create derivative works of, reverse engineer, alter, enhance or in any way exploit any MultipathIQ Tools or Materials in any manner, unless it is authorized in writing by us.</p>
+                        <p className="mb-2">You are invited to use Mpath Tools for your business purposes to monitor, manage, and observe your infrastructure layout. We hereby grant you a limited, personal, non-exclusive and non-transferable license during the authorized term to use and to display the Materials only in connection with these permitted uses.</p>
+                        <p>You have no other rights in Mpath Tools or any Materials and you may not modify, edit, copy, reproduce, create derivative works of, reverse engineer, alter, enhance or in any way exploit any Mpath Tools or Materials in any manner, unless it is authorized in writing by us.</p>
                     </div>
 
                     {/* Section 3 */}
                     <div>
                         <h2 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
                             <span className="text-indigo-500/50 font-mono text-sm">3.</span>
-                            Unauthorized Use of MultipathIQ Tools
+                            Unauthorized Use of Mpath Tools
                         </h2>
-                        <p>We authorize your limited use of MultipathIQ Tools. Any other use of MultipathIQ Tools beyond the permitted uses is prohibited and constitutes unauthorized use. All rights in MultipathIQ Tools and Materials remain the property of Macklabs, its subsidiaries, or its affiliated companies.</p>
+                        <p>We authorize your limited use of Mpath Tools. Any other use of Mpath Tools beyond the permitted uses is prohibited and constitutes unauthorized use. All rights in Mpath Tools and Materials remain the property of Macklabs, its subsidiaries, or its affiliated companies.</p>
                     </div>
 
                     {/* Section 4 */}
@@ -58,7 +58,7 @@ const Terms: React.FC = () => {
                             <span className="text-indigo-500/50 font-mono text-sm">4.</span>
                             Acceptable Use Policy
                         </h2>
-                        <p className="mb-3">You agree to use MultipathIQ Tools only for lawful purposes and in accordance with these Terms. You may not:</p>
+                        <p className="mb-3">You agree to use Mpath Tools only for lawful purposes and in accordance with these Terms. You may not:</p>
                         <ul className="list-disc pl-5 space-y-1">
                             <li>Use the Service for any illegal or unauthorized purpose</li>
                             <li>Upload or monitor content that violates intellectual property rights</li>
@@ -74,9 +74,9 @@ const Terms: React.FC = () => {
                     <div>
                         <h2 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
                             <span className="text-indigo-500/50 font-mono text-sm">5.</span>
-                            Terminating Your Use of MultipathIQ Tools
+                            Terminating Your Use of Mpath Tools
                         </h2>
-                        <p>We or you may terminate your use of MultipathIQ Tools at any time. Your use of MultipathIQ Tools will automatically terminate in the event you breach any of these Terms. We may terminate, suspend, or modify your registration with, or access to, all or part of MultipathIQ Tools, without notice, at any time and for any reason.</p>
+                        <p>We or you may terminate your use of Mpath Tools at any time. Your use of Mpath Tools will automatically terminate in the event you breach any of these Terms. We may terminate, suspend, or modify your registration with, or access to, all or part of Mpath Tools, without notice, at any time and for any reason.</p>
                     </div>
 
                     {/* Section 6 */}
@@ -85,9 +85,9 @@ const Terms: React.FC = () => {
                             <span className="text-indigo-500/50 font-mono text-sm">6.</span>
                             Disclaimers
                         </h2>
-                        <p className="font-semibold text-slate-800 mb-2">MULTIPATHIQ TOOLS ARE PROVIDED "AS IS" AND "WITH ALL FAULTS" AND THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF MULTIPATHIQ TOOLS IS WITH YOU.</p>
-                        <p className="mb-2">Macklabs expressly disclaims all warranties of any kind (express, implied or statutory) with respect to MultipathIQ Tools, which includes but is not limited to, any implied or statutory warranties of merchantability, fitness for a particular use or purpose, title, and non-infringement of intellectual property rights.</p>
-                        <p>Macklabs does not promise you that MultipathIQ Tools will meet your requirements or that MultipathIQ Tools will be uninterrupted, timely, secure, or error free or that defects will be corrected.</p>
+                        <p className="font-semibold text-slate-800 mb-2">Mpath TOOLS ARE PROVIDED "AS IS" AND "WITH ALL FAULTS" AND THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF Mpath TOOLS IS WITH YOU.</p>
+                        <p className="mb-2">Macklabs expressly disclaims all warranties of any kind (express, implied or statutory) with respect to Mpath Tools, which includes but is not limited to, any implied or statutory warranties of merchantability, fitness for a particular use or purpose, title, and non-infringement of intellectual property rights.</p>
+                        <p>Macklabs does not promise you that Mpath Tools will meet your requirements or that Mpath Tools will be uninterrupted, timely, secure, or error free or that defects will be corrected.</p>
                     </div>
 
                     {/* Section 7 */}
@@ -97,7 +97,7 @@ const Terms: React.FC = () => {
                             Limitation of Liability
                         </h2>
                         <p className="font-semibold text-slate-800 uppercase text-[13px] leading-relaxed bg-rose-50/50 p-4 rounded-xl border border-rose-100">
-                            IN NO EVENT WILL ANY OF THE MACKLABS PARTIES BE LIABLE FOR (A) ANY INDIRECT, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES OR (B) DAMAGES THAT ARE MORE THAN ONE HUNDRED UNITED STATES (US$100.00) DOLLARS IN TOTAL (INCLUDING, WITHOUT LIMITATION, THOSE RESULTING FROM LOSS OF REVENUES, LOST PROFITS, LOSS OF GOODWILL, LOSS OF USE, BUSINESS INTERRUPTION, OR OTHER INTANGIBLE LOSSES), ARISING OUT OF OR IN CONNECTION WITH MULTIPATHIQ TOOLS, WHETHER SUCH DAMAGES ARE BASED ON WARRANTY, CONTRACT, TORT, STATUTE, OR ANY OTHER LEGAL THEORY.
+                            IN NO EVENT WILL ANY OF THE MACKLABS PARTIES BE LIABLE FOR (A) ANY INDIRECT, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES OR (B) DAMAGES THAT ARE MORE THAN ONE HUNDRED UNITED STATES (US$100.00) DOLLARS IN TOTAL (INCLUDING, WITHOUT LIMITATION, THOSE RESULTING FROM LOSS OF REVENUES, LOST PROFITS, LOSS OF GOODWILL, LOSS OF USE, BUSINESS INTERRUPTION, OR OTHER INTANGIBLE LOSSES), ARISING OUT OF OR IN CONNECTION WITH Mpath TOOLS, WHETHER SUCH DAMAGES ARE BASED ON WARRANTY, CONTRACT, TORT, STATUTE, OR ANY OTHER LEGAL THEORY.
                         </p>
                     </div>
 
@@ -108,7 +108,7 @@ const Terms: React.FC = () => {
                             Content, Telemetry, and Data
                         </h2>
                         <ul className="space-y-2">
-                            <li><strong className="text-slate-800">8.1 Data Ownership:</strong> You retain ownership of telemetry, logs, and infrastructure data you transmit to MultipathIQ. By using our Services, you grant us a limited license to process, analyze, and display your data to provide the Service.</li>
+                            <li><strong className="text-slate-800">8.1 Data Ownership:</strong> You retain ownership of telemetry, logs, and infrastructure data you transmit to Mpath. By using our Services, you grant us a limited license to process, analyze, and display your data to provide the Service.</li>
                             <li><strong className="text-slate-800">8.2 Data Processing:</strong> We process your monitoring data in accordance with applicable data protection laws.</li>
                             <li><strong className="text-slate-800">8.3 Data Security:</strong> We implement appropriate technical and organizational measures to protect your monitoring data, but no system is completely secure.</li>
                             <li><strong className="text-slate-800">8.4 Data Retention:</strong> Your data is retained according to your plan's retention period and may be deleted upon account termination or data expiration.</li>
@@ -122,7 +122,7 @@ const Terms: React.FC = () => {
                             Infrastructure Monitoring Accuracy
                         </h2>
                         <ul className="space-y-2">
-                            <li><strong className="text-slate-800">9.1 Telemetry Accuracy:</strong> MultipathIQ relies on agents, SNMP, web probes, and API endpoints to collect telemetry. While we strive for high accuracy and minimal latency, network conditions, agent configurations, and external factors may cause delays or inaccuracies in reported statuses or metrics.</li>
+                            <li><strong className="text-slate-800">9.1 Telemetry Accuracy:</strong> Mpath relies on agents, SNMP, web probes, and API endpoints to collect telemetry. While we strive for high accuracy and minimal latency, network conditions, agent configurations, and external factors may cause delays or inaccuracies in reported statuses or metrics.</li>
                             <li><strong className="text-slate-800">9.2 Alerting Responsibility:</strong> You are responsible for configuring appropriate thresholds, alert rules, and incident response integrations. Macklabs is not liable for missed alerts, false positives, or the resulting impact on your business operations or service level agreements (SLAs).</li>
                         </ul>
                     </div>
@@ -134,9 +134,9 @@ const Terms: React.FC = () => {
                             Intellectual Property Rights
                         </h2>
                         <ul className="space-y-2">
-                            <li><strong className="text-slate-800">10.1 Our Rights:</strong> MultipathIQ, including its software, agents, design, and content, is owned by Macklabs and protected by intellectual property laws.</li>
-                            <li><strong className="text-slate-800">10.2 License:</strong> We grant you a limited, non-exclusive, non-transferable license to use MultipathIQ and install its tracking agents in accordance with these Terms.</li>
-                            <li><strong className="text-slate-800">10.3 Closed Software License:</strong> MultipathIQ is a closed-source, proprietary software application. This software is not open source and cannot be used, modified, distributed, or reproduced without explicit written approval from Macklabs.</li>
+                            <li><strong className="text-slate-800">10.1 Our Rights:</strong> Mpath, including its software, agents, design, and content, is owned by Macklabs and protected by intellectual property laws.</li>
+                            <li><strong className="text-slate-800">10.2 License:</strong> We grant you a limited, non-exclusive, non-transferable license to use Mpath and install its tracking agents in accordance with these Terms.</li>
+                            <li><strong className="text-slate-800">10.3 Closed Software License:</strong> Mpath is a closed-source, proprietary software application. This software is not open source and cannot be used, modified, distributed, or reproduced without explicit written approval from Macklabs.</li>
                         </ul>
                     </div>
 

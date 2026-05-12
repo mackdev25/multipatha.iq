@@ -6,7 +6,7 @@ const WhatDataIsNeeded: React.FC = () => {
             <h1 className="text-3xl font-extrabold text-slate-900 mb-6">What Data is needed</h1>
             
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                For MultipathIQ's parser to correctly evaluate paths, it requires specific outputs from the Brocade Fabric OS.
+                For Mpath's parser to correctly evaluate paths, it requires specific outputs from the Brocade Fabric OS.
             </p>
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">Required Commands</h2>
@@ -36,7 +36,7 @@ const WhatDataIsNeeded: React.FC = () => {
                 <div className="border-l-4 border-slate-300 pl-4">
                     <h3 className="text-lg font-bold text-slate-800 font-mono text-slate-500">cfgshow <span className="text-xs uppercase bg-slate-100 px-2 py-0.5 rounded ml-2">Optional</span></h3>
                     <p className="text-sm text-slate-600 mt-1">
-                        Provides the overarching configuration. While useful for context, MultipathIQ primarily relies on the active zone database.
+                        Provides the overarching configuration. While useful for context, Mpath primarily relies on the active zone database.
                     </p>
                 </div>
             </div>

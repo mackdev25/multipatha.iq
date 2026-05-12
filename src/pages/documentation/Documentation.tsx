@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { FiSearch, FiChevronRight, FiChevronDown, FiHexagon, FiGithub, FiTwitter, FiGlobe, FiHelpCircle } from 'react-icons/fi';
 
-import WhatIsMultipathIQ from './content/WhatIsMultipathIQ';
-import WhyChooseMultipathIQ from './content/WhyChooseMultipathIQ';
+import WhatIsMpath from './content/WhatIsMpath';
+import WhyChooseMpath from './content/WhyChooseMpath';
 import PlatformArchitecture from './content/PlatformArchitecture';
 import TechnologyStack from './content/TechnologyStack';
 
 import SystemRequirements from './content/SystemRequirements';
 import DeploymentMethods from './content/DeploymentMethods';
-import InstallingMultipathIQ from './content/InstallingMultipathIQ';
+import InstallingMpath from './content/InstallingMpath';
 import InstallationTroubleshooting from './content/InstallationTroubleshooting';
 
 import QuickStartGuide from './content/QuickStartGuide';
@@ -42,8 +42,8 @@ const documentationStructure: Category[] = [
     {
         title: 'Platform Fundamentals',
         topics: [
-            { title: 'What is Multipath.IQ', component: WhatIsMultipathIQ },
-            { title: 'Why choose Multipath.IQ', component: WhyChooseMultipathIQ },
+            { title: 'What is Mpath', component: WhatIsMpath },
+            { title: 'Why choose Mpath', component: WhyChooseMpath },
             { title: 'Platform architecture', component: PlatformArchitecture },
             { title: 'Technology Stack', component: TechnologyStack },
         ]
@@ -53,7 +53,7 @@ const documentationStructure: Category[] = [
         topics: [
             { title: 'System requirements', component: SystemRequirements },
             { title: 'Deployment methods', component: DeploymentMethods },
-            { title: 'Installing Multipath.IQ', component: InstallingMultipathIQ },
+            { title: 'Installing Mpath', component: InstallingMpath },
             { title: 'Installation troubleshooting', component: InstallationTroubleshooting },
         ]
     },
@@ -128,7 +128,7 @@ const Documentation: React.FC = () => {
             <div className="relative w-80 flex-shrink-0 border-r border-slate-200/60 bg-white/50 backdrop-blur-xl h-screen flex flex-col pt-6 z-10 overflow-hidden">
                 <div className="px-6 mb-6 flex items-center gap-3">
                     <FiHexagon className="text-2xl text-indigo-500 fill-indigo-50" />
-                    <span className="text-xl font-bold tracking-tight text-slate-800">MultipathIQ</span>
+                    <span className="text-xl font-bold tracking-tight text-slate-800">Mpath</span>
                 </div>
                 
                 <div className="px-6 mb-6">

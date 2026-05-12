@@ -10,14 +10,14 @@ const SetupAIObservability: React.FC = () => {
             </div>
 
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                When the MultipathIQ AI Insights Engine officially launches, setup will be entirely seamless and require zero external API keys or cloud configurations.
+                When the Mpath AI Insights Engine officially launches, setup will be entirely seamless and require zero external API keys or cloud configurations.
             </p>
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">Future Setup Workflow</h2>
             
             <ol className="list-decimal pl-6 space-y-4 text-slate-600">
                 <li>
-                    <strong>Update Application:</strong> Pull the latest release of MultipathIQ containing the embedded Wasm (WebAssembly) inferencing engine.
+                    <strong>Update Application:</strong> Pull the latest release of Mpath containing the embedded Wasm (WebAssembly) inferencing engine.
                 </li>
                 <li>
                     <strong>Hardware Allocation:</strong> Ensure the client machine running the browser has hardware acceleration (WebGL or WebGPU) enabled. The local AI engine will utilize the client's GPU to process the zoning algorithms.

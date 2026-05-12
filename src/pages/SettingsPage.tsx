@@ -69,7 +69,7 @@ const SettingsPage: React.FC<SettingsPageProps> = ({ settings, onUpdateSettings 
             <section className={`${glassCardClasses} p-6`}>
                 <div className="mb-6">
                     <h3 className="text-xl font-bold tracking-tight text-slate-800">Validation Mode</h3>
-                    <p className="text-sm font-medium text-slate-500 mt-1">Choose how MultipathIQ validates your SAN fabrics.</p>
+                    <p className="text-sm font-medium text-slate-500 mt-1">Choose how Mpath validates your SAN fabrics.</p>
                 </div>
 
                 <div className="grid gap-4 md:grid-cols-2">

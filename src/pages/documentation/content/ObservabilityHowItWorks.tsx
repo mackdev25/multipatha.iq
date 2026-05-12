@@ -6,7 +6,7 @@ const ObservabilityHowItWorks: React.FC = () => {
             <h1 className="text-3xl font-extrabold text-slate-900 mb-6">How Observability Works</h1>
             
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                The Observability module in MultipathIQ is designed to shift SAN management from a reactive state to a proactive state. It ingests the raw validation matrix and computes a real-time health telemetry index for your infrastructure.
+                The Observability module in Mpath is designed to shift SAN management from a reactive state to a proactive state. It ingests the raw validation matrix and computes a real-time health telemetry index for your infrastructure.
             </p>
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">The Scoring Engine</h2>
@@ -28,7 +28,7 @@ const ObservabilityHowItWorks: React.FC = () => {
             <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-6 my-8">
                 <h3 className="text-indigo-800 font-bold mb-2">Visualizing the Data</h3>
                 <p className="text-indigo-700 text-sm">
-                    MultipathIQ utilizes the `recharts` library to render the telemetry. This provides interactive, SVG-based Donut and Bar charts that immediately highlight disparities in load or configuration errors between your redundant fabrics.
+                    Mpath utilizes the `recharts` library to render the telemetry. This provides interactive, SVG-based Donut and Bar charts that immediately highlight disparities in load or configuration errors between your redundant fabrics.
                 </p>
             </div>
         </div>

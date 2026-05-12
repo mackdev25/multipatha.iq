@@ -21,7 +21,7 @@ const ValidationTroubleshooting: React.FC = () => {
                 <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
                     <h3 className="text-md font-bold text-slate-800 mb-1">2. "Invalid File Format" Error</h3>
                     <p className="text-sm text-slate-600 mb-2"><strong>Symptom:</strong> Dropping the file triggers a red toast notification.</p>
-                    <p className="text-sm text-slate-600"><strong>Fix:</strong> MultipathIQ only accepts `.xlsx` or `.xls` MIME types. If you captured raw text (`.txt` or `.log`), you must format it into an Excel spreadsheet first. Direct CLI text parsing is an upcoming feature.</p>
+                    <p className="text-sm text-slate-600"><strong>Fix:</strong> Mpath only accepts `.xlsx` or `.xls` MIME types. If you captured raw text (`.txt` or `.log`), you must format it into an Excel spreadsheet first. Direct CLI text parsing is an upcoming feature.</p>
                 </div>
 
                 <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">

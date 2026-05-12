@@ -6,7 +6,7 @@ const DeploymentMethods: React.FC = () => {
             <h1 className="text-3xl font-extrabold text-slate-900 mb-6">Deployment Methods</h1>
             
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                As a fully client-side application built on React and Vite, MultipathIQ is incredibly versatile. It compiles down to pure HTML, CSS, and JavaScript, meaning it can be deployed almost anywhere without requiring a backend database or application server.
+                As a fully client-side application built on React and Vite, Mpath is incredibly versatile. It compiles down to pure HTML, CSS, and JavaScript, meaning it can be deployed almost anywhere without requiring a backend database or application server.
             </p>
 
             <div className="space-y-8 my-8">

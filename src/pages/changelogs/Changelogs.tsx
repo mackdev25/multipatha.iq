@@ -35,7 +35,7 @@ const Changelogs: React.FC = () => {
                         </div>
                         <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 block">Branding & Visual Refinement</span>
                         <ul className="mt-2 list-disc pl-5 text-sm text-slate-600 space-y-1.5">
-                            <li>Completed application rebranding from ZoneGuard to <strong className="text-slate-800 font-semibold">MultipathIQ</strong>.</li>
+                            <li>Completed application rebranding from ZoneGuard to <strong className="text-slate-800 font-semibold">Mpath</strong>.</li>
                             <li>Integrated custom brand logo (`/logo.png`) into header and sidebar navigation elements.</li>
                             <li>Optimized global typography by integrating the premium <strong className="text-slate-800 font-semibold">Outfit</strong> Google Font.</li>
                             <li>Added social and feedback quicklinks (Discord, X, YouTube, Product Hunt) in the navigation sidebar.</li>

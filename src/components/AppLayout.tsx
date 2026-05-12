@@ -136,7 +136,7 @@ const AppLayout: React.FC = () => {
         },
         about: {
             title: 'About',
-            subtitle: 'Learn more about MultipathIQ.',
+            subtitle: 'Learn more about Mpath.',
         },
         privacy: {
             title: 'Privacy Policy',
@@ -144,7 +144,7 @@ const AppLayout: React.FC = () => {
         },
         terms: {
             title: 'Terms of Use',
-            subtitle: 'Terms and conditions for using MultipathIQ.',
+            subtitle: 'Terms and conditions for using Mpath.',
         },
         changelogs: {
             title: 'Changelogs',
@@ -152,7 +152,7 @@ const AppLayout: React.FC = () => {
         },
         documentation: {
             title: 'Documentation',
-            subtitle: 'Guides and instructions for using MultipathIQ.',
+            subtitle: 'Guides and instructions for using Mpath.',
         },
     };
 
@@ -230,12 +230,12 @@ const AppLayout: React.FC = () => {
                             }`}
                     >
                         <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl overflow-hidden">
-                            <img src="/path.png" alt="MultipathIQ Logo" className="h-full w-full object-contain" />
+                            <img src="/path.png" alt="Mpath Logo" className="h-full w-full object-contain" />
                         </div>
                         {!collapsed && (
                             <div className="min-w-0">
-                                <p className="truncate text-2xl font-normal tracking-wide text-white">
-                                    Multipath<span className="text-rose-500">.</span><span className="text-rose-500 font-bold">iQ</span>
+                                <p className="truncate text-2xl font-semibold tracking-wide text-zinc-400">
+                                    Mpath
                                 </p>
 
                             </div>
@@ -404,7 +404,7 @@ const AppLayout: React.FC = () => {
 
                             <div className="absolute bottom-full right-4 mb-2 hidden w-48 flex-col gap-1 rounded-xl border border-slate-700 bg-slate-800 p-3 shadow-xl group-hover:flex z-50">
                                 <div className="flex justify-between items-center border-b border-slate-700 pb-2 mb-1">
-                                    <span className="text-xs font-bold text-white">MultipathIQ Info</span>
+                                    <span className="text-xs font-bold text-white">Mpath Info</span>
                                 </div>
                                 <div className="flex justify-between text-[10px]">
                                     <span className="text-slate-400">Version</span>

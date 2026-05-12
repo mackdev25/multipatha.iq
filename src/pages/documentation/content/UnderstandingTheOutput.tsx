@@ -6,7 +6,7 @@ const UnderstandingTheOutput: React.FC = () => {
             <h1 className="text-3xl font-extrabold text-slate-900 mb-6">Understanding the Output</h1>
             
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                MultipathIQ translates raw, complex configuration dumps into an easy-to-read, actionable data table. Here is how to interpret the primary Validation Results view.
+                Mpath translates raw, complex configuration dumps into an easy-to-read, actionable data table. Here is how to interpret the primary Validation Results view.
             </p>
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">The Results Table</h2>

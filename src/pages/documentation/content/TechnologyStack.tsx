@@ -6,7 +6,7 @@ const TechnologyStack: React.FC = () => {
             <h1 className="text-3xl font-extrabold text-slate-900 mb-6">Technology Stack</h1>
             
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                MultipathIQ is built utilizing modern, high-performance web technologies designed to parse large datasets quickly without compromising on aesthetic quality or user experience.
+                Mpath is built utilizing modern, high-performance web technologies designed to parse large datasets quickly without compromising on aesthetic quality or user experience.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
@@ -16,7 +16,7 @@ const TechnologyStack: React.FC = () => {
                         <h3 className="text-lg font-bold text-slate-800 m-0">React 18</h3>
                     </div>
                     <p className="text-sm text-slate-600">
-                        The foundational UI library. MultipathIQ heavily leverages functional components, Hooks (<code>useState</code>, <code>useMemo</code>), and a Virtual DOM to ensure the interface remains responsive even when rendering tables with thousands of SAN paths.
+                        The foundational UI library. Mpath heavily leverages functional components, Hooks (<code>useState</code>, <code>useMemo</code>), and a Virtual DOM to ensure the interface remains responsive even when rendering tables with thousands of SAN paths.
                     </p>
                 </div>
 
@@ -36,7 +36,7 @@ const TechnologyStack: React.FC = () => {
                         <h3 className="text-lg font-bold text-slate-800 m-0">Tailwind CSS</h3>
                     </div>
                     <p className="text-sm text-slate-600">
-                        The utility-first CSS framework responsible for MultipathIQ's premium, enterprise-grade aesthetic. It enables our complex glassmorphism effects, dynamic gradients, and precise responsive layouts.
+                        The utility-first CSS framework responsible for Mpath's premium, enterprise-grade aesthetic. It enables our complex glassmorphism effects, dynamic gradients, and precise responsive layouts.
                     </p>
                 </div>
 

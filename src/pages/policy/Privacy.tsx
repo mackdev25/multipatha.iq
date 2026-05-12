@@ -12,14 +12,14 @@ const Privacy: React.FC = () => {
                     
                     <div>
                         <p>
-                            We at Macklabs (together with our affiliates, "MultipathIQ", "we", "our", or "us") respect your privacy and are strongly committed to keeping secure any information we obtain from you or about you. This Privacy Policy describes our practices with respect to Personal Information we collect from or about you when you use our website, applications, and services (collectively, "Services").
+                            We at Macklabs (together with our affiliates, "Mpath", "we", "our", or "us") respect your privacy and are strongly committed to keeping secure any information we obtain from you or about you. This Privacy Policy describes our practices with respect to Personal Information we collect from or about you when you use our website, applications, and services (collectively, "Services").
                         </p>
                         <p className="mt-4">
                             This Privacy Policy does not apply to the infrastructure telemetry, logs, uptime metrics, or status data that we process on behalf of customers of our business offerings. Our use of that infrastructure data is governed entirely by our customer agreements covering access to and use of those enterprise monitoring offerings.
                         </p>
                         <p className="mt-4 font-medium text-slate-800">Effective: April 20, 2026</p>
                         <p className="mt-4">
-                            We've updated our Privacy Policy below. These updates apply to all users of MultipathIQ Services. If you have any questions about these changes, please contact us at <a href="mailto:privacy@macklabs.com" className="text-indigo-600 hover:underline">privacy@macklabs.com</a>.
+                            We've updated our Privacy Policy below. These updates apply to all users of Mpath Services. If you have any questions about these changes, please contact us at <a href="mailto:privacy@macklabs.com" className="text-indigo-600 hover:underline">privacy@macklabs.com</a>.
                         </p>
                     </div>
 
@@ -79,7 +79,7 @@ const Privacy: React.FC = () => {
                             <li><strong>Vendors and Service Providers:</strong> To assist us in meeting business operations needs and to perform certain services and functions, we may provide Personal Information to vendors and service providers, including providers of hosting services, customer service vendors, cloud services, email communication software, web analytics services, and other information technology providers.</li>
                             <li><strong>Business Transfers:</strong> If we are involved in strategic transactions, reorganization, bankruptcy, receivership, or transition of service to another provider, your Personal Information and other information may be disclosed in the diligence process and transferred to a successor or affiliate as part of that Transaction.</li>
                             <li><strong>Legal Requirements:</strong> We may share your Personal Information with government authorities, industry peers, or other third parties if required to do so by law or in the good faith belief that such action is necessary to comply with a legal obligation, protect our rights, or protect the safety of our products, employees, or users.</li>
-                            <li><strong>Business Account Administrators:</strong> When you join a MultipathIQ Enterprise or business account, the administrators of that account may access and control your MultipathIQ account.</li>
+                            <li><strong>Business Account Administrators:</strong> When you join a Mpath Enterprise or business account, the administrators of that account may access and control your Mpath account.</li>
                         </ul>
                     </div>
 
@@ -90,7 +90,7 @@ const Privacy: React.FC = () => {
                             Your Rights
                         </h2>
                         <p className="mb-3">Depending on location, individuals may have certain statutory rights in relation to their Personal Information. For example, you may have the right to access, delete, rectify, transfer, restrict, or object to the processing of your Personal Information, as well as lodge a complaint with your local data protection authority.</p>
-                        <p>You can exercise some of these rights through your MultipathIQ account. If you are unable to exercise your rights through your account, please submit your request to <a href="mailto:privacy@macklabs.com" className="text-indigo-600 hover:underline">privacy@macklabs.com</a>.</p>
+                        <p>You can exercise some of these rights through your Mpath account. If you are unable to exercise your rights through your account, please submit your request to <a href="mailto:privacy@macklabs.com" className="text-indigo-600 hover:underline">privacy@macklabs.com</a>.</p>
                     </div>
 
                     {/* Section 5 */}

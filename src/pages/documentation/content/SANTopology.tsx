@@ -11,7 +11,7 @@ const SANTopology: React.FC = () => {
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">Powered by Mermaid.js</h2>
             <p className="text-slate-600 mb-4">
-                MultipathIQ utilizes the `mermaid` parsing library to dynamically generate SVG-based topology graphs entirely in the browser. 
+                Mpath utilizes the `mermaid` parsing library to dynamically generate SVG-based topology graphs entirely in the browser. 
             </p>
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">Interpreting the Graph</h2>
@@ -25,7 +25,7 @@ const SANTopology: React.FC = () => {
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 my-8">
                 <h3 className="text-slate-800 font-bold mb-2">Performance Considerations</h3>
                 <p className="text-slate-600 text-sm">
-                    Generating massive SVGs with thousands of nodes can cause browser rendering lag. MultipathIQ implements logic to restrict or group extreme topologies, but it is highly recommended to filter your data via the core Validation grid before switching to the Topology view for troubleshooting specific hosts.
+                    Generating massive SVGs with thousands of nodes can cause browser rendering lag. Mpath implements logic to restrict or group extreme topologies, but it is highly recommended to filter your data via the core Validation grid before switching to the Topology view for troubleshooting specific hosts.
                 </p>
             </div>
         </div>

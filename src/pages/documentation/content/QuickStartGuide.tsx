@@ -6,12 +6,12 @@ const QuickStartGuide: React.FC = () => {
             <h1 className="text-3xl font-extrabold text-slate-900 mb-6">Quick Start Guide</h1>
             
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Follow this simple workflow to perform your first end-to-end SAN fabric validation using MultipathIQ.
+                Follow this simple workflow to perform your first end-to-end SAN fabric validation using Mpath.
             </p>
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">1. Access the Dashboard</h2>
             <p className="text-slate-600 mb-4">
-                Open MultipathIQ in your modern browser. You will be greeted by the <strong>Validation Flow</strong> screen. Notice the "Secure" badge in the top right corner—this indicates the application is running completely locally in your sandbox.
+                Open Mpath in your modern browser. You will be greeted by the <strong>Validation Flow</strong> screen. Notice the "Secure" badge in the top right corner—this indicates the application is running completely locally in your sandbox.
             </p>
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">2. Upload your Data</h2>

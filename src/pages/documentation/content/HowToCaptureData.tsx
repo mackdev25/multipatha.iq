@@ -6,7 +6,7 @@ const HowToCaptureData: React.FC = () => {
             <h1 className="text-3xl font-extrabold text-slate-900 mb-6">How to capture the data</h1>
             
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                MultipathIQ relies on accurate configuration dumps from your Brocade SAN switches. This guide explains how to extract the necessary information safely.
+                Mpath relies on accurate configuration dumps from your Brocade SAN switches. This guide explains how to extract the necessary information safely.
             </p>
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">Using SSH / CLI</h2>
@@ -28,7 +28,7 @@ const HowToCaptureData: React.FC = () => {
                     <strong>Repeat:</strong> Connect to Fabric B's principal switch and repeat the process.
                 </li>
                 <li>
-                    <strong>Format:</strong> Currently, MultipathIQ ingests data via `.xlsx`. You may need to use an intermediate macro or script (provided by your organization) to format the raw text logs into the structured Excel columns expected by MultipathIQ.
+                    <strong>Format:</strong> Currently, Mpath ingests data via `.xlsx`. You may need to use an intermediate macro or script (provided by your organization) to format the raw text logs into the structured Excel columns expected by Mpath.
                 </li>
             </ol>
 

@@ -6,7 +6,7 @@ const SystemRequirements: React.FC = () => {
             <h1 className="text-3xl font-extrabold text-slate-900 mb-6">System Requirements</h1>
             
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Because MultipathIQ processes data entirely client-side, the performance of the application is directly tied to the specifications of the machine running the browser, rather than a centralized server.
+                Because Mpath processes data entirely client-side, the performance of the application is directly tied to the specifications of the machine running the browser, rather than a centralized server.
             </p>
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">Hardware Requirements (Client)</h2>
@@ -46,7 +46,7 @@ const SystemRequirements: React.FC = () => {
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">Supported Browsers</h2>
             <p className="text-slate-600 mb-4">
-                MultipathIQ utilizes modern ES6 JavaScript features, Web Workers (under the hood via React), and advanced CSS properties like glassmorphism (backdrop-filter). 
+                Mpath utilizes modern ES6 JavaScript features, Web Workers (under the hood via React), and advanced CSS properties like glassmorphism (backdrop-filter). 
             </p>
             <ul className="list-disc pl-6 space-y-2 text-slate-600">
                 <li><strong>Google Chrome:</strong> Version 90+ (Recommended for best V8 parsing speeds)</li>

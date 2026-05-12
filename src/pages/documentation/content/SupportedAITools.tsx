@@ -10,12 +10,12 @@ const SupportedAITools: React.FC = () => {
             </div>
 
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                The <strong>MultipathIQ AI Insights Engine</strong> is an upcoming module designed to bring predictive analytics and automated anomaly detection to your SAN infrastructure.
+                The <strong>Mpath AI Insights Engine</strong> is an upcoming module designed to bring predictive analytics and automated anomaly detection to your SAN infrastructure.
             </p>
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">Architecture & Privacy</h2>
             <p className="text-slate-600 mb-4">
-                To maintain our strict Zero-Trust and Local-First architecture, the AI implementation will bypass traditional cloud-based LLM APIs (like OpenAI or Anthropic). Instead, MultipathIQ will utilize <strong>Local Edge Inferencing</strong>.
+                To maintain our strict Zero-Trust and Local-First architecture, the AI implementation will bypass traditional cloud-based LLM APIs (like OpenAI or Anthropic). Instead, Mpath will utilize <strong>Local Edge Inferencing</strong>.
             </p>
 
             <h2 className="text-xl font-bold text-slate-800 mt-8 mb-4">Planned Capabilities</h2>

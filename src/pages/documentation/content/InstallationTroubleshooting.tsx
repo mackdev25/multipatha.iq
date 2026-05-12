@@ -6,7 +6,7 @@ const InstallationTroubleshooting: React.FC = () => {
             <h1 className="text-3xl font-extrabold text-slate-900 mb-6">Installation Troubleshooting</h1>
             
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                If you encounter issues while setting up MultipathIQ, check the common error scenarios below.
+                If you encounter issues while setting up Mpath, check the common error scenarios below.
             </p>
 
             <div className="space-y-6 my-8">

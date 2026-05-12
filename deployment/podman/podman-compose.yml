@@ -1,0 +1,21 @@
+services:
+  mpath:
+    image: mpath:latest
+    build:
+      context: ../..
+      dockerfile: deployment/podman/Containerfile
+    container_name: mpath
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    labels:
+      - "com.mpath.description=Multipath Intelligence Platform"
+      - "com.mpath.version=1.0.1"

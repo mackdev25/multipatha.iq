@@ -1,0 +1,42 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  Mpath — Podman Containerfile
+#  Multi-stage build: Node (builder) → nginx:alpine (runtime)
+#  Rootless-compatible; no USER directive conflicts with Podman defaults.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Stage 1: Build ────────────────────────────────────────────────────────────
+FROM docker.io/node:20-alpine AS builder
+
+LABEL maintainer="Superstack <hello@superstack.dev>"
+LABEL org.opencontainers.image.title="Mpath"
+LABEL org.opencontainers.image.description="Multipath Intelligence Platform — SAN Fabric Analytics"
+LABEL org.opencontainers.image.version="1.0.1"
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci --prefer-offline --no-audit --no-fund
+
+COPY . .
+RUN npm run build
+
+# ── Stage 2: Production server ────────────────────────────────────────────────
+FROM docker.io/nginx:1.27-alpine AS production
+
+RUN rm /etc/nginx/conf.d/default.conf
+
+COPY deployment/podman/nginx.conf /etc/nginx/conf.d/mpath.conf
+
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Podman rootless: allow nginx to bind to port 8080 without root
+RUN sed -i 's/listen\s*80;/listen 8080;/' /etc/nginx/conf.d/mpath.conf \
+ && chown -R nginx:nginx /usr/share/nginx/html \
+ && chmod -R 755 /usr/share/nginx/html
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD wget -qO- http://localhost:8080/ || exit 1
+
+EXPOSE 8080
+
+CMD ["nginx", "-g", "daemon off;"]

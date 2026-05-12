@@ -10,9 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
-deployment
-sample
-scripts
+deployment/installer/mpathctl
 *.local
 
 # Editor directories and files

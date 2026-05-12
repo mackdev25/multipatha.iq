@@ -1,12 +1,12 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-    MultipathIQ — Windows Deployment Script
+    Mpath — Windows Deployment Script
 .DESCRIPTION
     Detects environment, installs prerequisites, clones the repository,
     builds the app, starts it as a background job, and installs mpathctl.
 .PARAMETER InstallDir
-    Installation directory. Defaults to %LOCALAPPDATA%\MultipathIQ
+    Installation directory. Defaults to %LOCALAPPDATA%\Mpath
 .PARAMETER Port
     Port to serve the app on. Defaults to 4173.
 .PARAMETER NoMpathctl
@@ -18,7 +18,7 @@
 
 [CmdletBinding()]
 param(
-    [string] $InstallDir = "$env:LOCALAPPDATA\MultipathIQ",
+    [string] $InstallDir = "$env:LOCALAPPDATA\Mpath",
     [int]    $Port       = 4173,
     [switch] $NoMpathctl
 )
@@ -27,15 +27,15 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
 # ── Constants ──────────────────────────────────────────────────────────────────
-$REPO_URL          = "https://github.com/ZoneAssure/MultipathIQ-Main.git"
-$APP_NAME          = "MultipathIQ"
+$REPO_URL          = "https://github.com/mackdev25/mpath.git"
+$APP_NAME          = "Mpath"
 $APP_VERSION       = "v1.0.1"
 $NODE_MIN_VERSION  = 18
-$CONFIG_DIR        = "$env:USERPROFILE\.mpathiq"
+$CONFIG_DIR        = "$env:USERPROFILE\.mpath"
 $LOG_DIR           = "$CONFIG_DIR\logs"
 $LOG_FILE          = "$LOG_DIR\server.log"
 $PID_FILE          = "$CONFIG_DIR\server.pid"
-$MPATHCTL_RELEASES = "https://github.com/ZoneAssure/MultipathIQ-Main/releases/latest/download"
+$MPATHCTL_RELEASES = "https://github.com/mackdev25/mpath/releases/latest/download"
 $BIN_DIR           = "$env:USERPROFILE\.local\bin"
 
 # ── Colour helpers ─────────────────────────────────────────────────────────────

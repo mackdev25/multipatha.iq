@@ -1,5 +1,5 @@
-// mpathctl — MultipathIQ Control CLI
-// Enterprise-grade command-line tool for managing the MultipathIQ server.
+// mpathctl — Mpath Control CLI
+// Enterprise-grade command-line tool for managing the Mpath server.
 //
 // Build:
 //   go build -ldflags="-s -w -X main.AppVersion=v1.0.1" -o mpathctl .
@@ -59,7 +59,7 @@ type Config struct {
 
 func configDir() string {
 	home, _ := os.UserHomeDir()
-	return filepath.Join(home, ".mpathiq")
+	return filepath.Join(home, ".mpath")
 }
 
 func pidFile() string { return filepath.Join(configDir(), "server.pid") }
@@ -359,7 +359,7 @@ func cmdVersion() {
 func cmdUninstall() {
 	cfg, cfgErr := loadConfig()
 
-	fmt.Printf("  %s!%s  This will stop the server and remove all MultipathIQ files.\n", yellow, reset)
+	fmt.Printf("  %s!%s  This will stop the server and remove all Mpath files.\n", yellow, reset)
 	fmt.Printf("  Type %s\"yes\"%s to confirm: ", bold, reset)
 
 	var confirm string
@@ -402,7 +402,7 @@ func cmdUninstall() {
 		fmt.Printf("  %s✔%s  Removed %s\n", green, reset, binPath)
 	}
 
-	fmt.Printf("\n  %s✔%s  MultipathIQ uninstalled successfully.\n\n", green, reset)
+	fmt.Printf("\n  %s✔%s  Mpath uninstalled successfully.\n\n", green, reset)
 }
 
 func cmdHelp() {
@@ -417,11 +417,11 @@ func cmdHelp() {
 		{"doctor", "Diagnose Node.js, npm, git, and install integrity"},
 		{"expose", "Print local + network access URLs"},
 		{"version", "Display version information"},
-		{"uninstall", "Stop server and remove all MultipathIQ files"},
+		{"uninstall", "Stop server and remove all Mpath files"},
 		{"help", "Show this help message"},
 	}
 
-	fmt.Printf("  %s%smpathctl — MultipathIQ Control CLI%s\n\n", bold, white, reset)
+	fmt.Printf("  %s%smpathctl — Mpath Control CLI%s\n\n", bold, white, reset)
 	fmt.Printf("  %sUsage:%s  mpathctl <command>\n\n", dim, reset)
 	fmt.Printf("  %sCommands:%s\n\n", dim, reset)
 	for _, c := range cmds {

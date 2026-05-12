@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 # =============================================================================
-#  MultipathIQ — Universal Deployment Script
+#  Mpath — Universal Deployment Script
 #  Supports: macOS · Linux · RHEL/CentOS/Fedora · Ubuntu/Debian
 #
 #  Usage:
-#    curl -fsSL https://raw.githubusercontent.com/mackdev25/multipatha.iq/main/deployment/installer/deploy.sh | bash
+#    curl -fsSL https://raw.githubusercontent.com/mackdev25/mpath/main/deployment/installer/deploy.sh | bash
 #    — or —
 #    bash deploy.sh [--install-dir /path] [--port 4173] [--no-mpathctl]
 # =============================================================================
 set -euo pipefail
 
 # ── Constants ──────────────────────────────────────────────────────────────────
-readonly REPO_URL="https://github.com/mackdev25/multipatha.iq.git"
-readonly APP_NAME="MultipathIQ"
+readonly REPO_URL="https://github.com/mackdev25/mpath.git"
+readonly APP_NAME="Mpath"
 readonly APP_VERSION="v1.0.1"
 readonly NODE_MIN_VERSION=18
 readonly DEFAULT_PORT=4173
-readonly CONFIG_DIR="${HOME}/.mpathiq"
+readonly CONFIG_DIR="${HOME}/.mpath"
 readonly PID_FILE="${CONFIG_DIR}/server.pid"
 readonly LOG_DIR="${CONFIG_DIR}/logs"
 readonly LOG_FILE="${LOG_DIR}/server.log"
-readonly MPATHCTL_RELEASES="https://github.com/mackdev25/multipatha.iq/releases/latest/download"
+readonly MPATHCTL_RELEASES="https://github.com/mackdev25/mpath/releases/latest/download"
 
 # ── Colours ────────────────────────────────────────────────────────────────────
 if [[ -t 1 ]]; then
@@ -32,7 +32,7 @@ else
 fi
 
 # ── Arguments ──────────────────────────────────────────────────────────────────
-INSTALL_DIR="${HOME}/.local/share/multipathiq"
+INSTALL_DIR="${HOME}/.local/share/mpath"
 APP_PORT="${DEFAULT_PORT}"
 SKIP_MPATHCTL=false
 
@@ -210,7 +210,7 @@ add_to_path() {
   local export_line="export PATH=\"${dir}:\$PATH\""
   if ! grep -qF "$dir" "$rc_file" 2>/dev/null; then
     echo "" >> "$rc_file"
-    echo "# MultipathIQ — mpathctl CLI" >> "$rc_file"
+    echo "# Mpath — mpathctl CLI" >> "$rc_file"
     echo "$export_line" >> "$rc_file"
     success "Added ${dir} to PATH in ${rc_file}"
     info "Run: source ${rc_file}  (or open a new terminal)"
